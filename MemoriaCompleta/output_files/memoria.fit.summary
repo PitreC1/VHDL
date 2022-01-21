@@ -1,0 +1,20 @@
+Fitter Status : Successful - Fri Jan 21 14:52:07 2022
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : memoria
+Top-level Entity Name : memoria
+Family : Cyclone V
+Device : 5CGXFC9E6F35I7
+Timing Models : Final
+Logic utilization (in ALMs) : 81 / 113,560 ( < 1 % )
+Total registers : 135
+Total pins : 283 / 616 ( 46 % )
+Total virtual pins : 0
+Total block memory bits : 2,048 / 12,492,800 ( < 1 % )
+Total RAM Blocks : 1 / 1,220 ( < 1 % )
+Total DSP Blocks : 0 / 342 ( 0 % )
+Total HSSI RX PCSs : 0 / 12 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 12 ( 0 % )
+Total HSSI TX PCSs : 0 / 12 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 12 ( 0 % )
+Total PLLs : 0 / 20 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

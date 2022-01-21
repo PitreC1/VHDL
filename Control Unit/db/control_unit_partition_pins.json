@@ -1,0 +1,93 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "IR_Load",
+					"strict" : false
+				},
+				{
+					"name" : "MAR_Load",
+					"strict" : false
+				},
+				{
+					"name" : "PC_Load",
+					"strict" : false
+				},
+				{
+					"name" : "PC_Inc",
+					"strict" : false
+				},
+				{
+					"name" : "A_Load",
+					"strict" : false
+				},
+				{
+					"name" : "CCR_Load",
+					"strict" : false
+				},
+				{
+					"name" : "Bus1_Sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus2_Sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Bus2_Sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "writen",
+					"strict" : false
+				},
+				{
+					"name" : "IR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "IR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CCR_Result[2]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
