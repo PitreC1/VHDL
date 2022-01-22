@@ -1,9 +1,10 @@
 vendor_name = ModelSim
-source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/EjercicioROM9dic/rom_128x8_sync.vhd
-source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/EjercicioRAM9dic/rw_96x8_sync.vhd
+source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ROM/rom_128x8_sync.vhd
+source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/RAM/rw_96x8_sync.vhd
 source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/Entradas/Entradas.vhd
 source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/MemoriaCompleta/memoria.vhd
 source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/MemoriaCompleta/Waveform.vwf
+source_file = 1, Waveform1.vwf
 source_file = 1, c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/timing_b.vhd

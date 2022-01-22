@@ -1,5 +1,5 @@
 Fitter report for memoria
-Fri Jan 21 14:52:07 2022
+Fri Jan 21 17:18:38 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -61,7 +61,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Fri Jan 21 14:52:07 2022       ;
+; Fitter Status                   ; Successful - Fri Jan 21 17:18:38 2022       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; memoria                                     ;
 ; Top-level Entity Name           ; memoria                                     ;
@@ -156,7 +156,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.0%      ;
+;     Processor 2            ;   0.9%      ;
 +----------------------------+-------------+
 
 
@@ -3834,7 +3834,7 @@ Info (184020): Starting Fitter periphery placement operations
 Info (11191): Automatically promoted 2 clocks (2 global)
     Info (11162): clock~inputCLKENA0 with 143 fanout uses global clock CLKCTRL_G6
     Info (11162): reset~inputCLKENA0 with 128 fanout uses global clock CLKCTRL_G9
-Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:03
+Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:09
 Info (176233): Starting register packing
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'memoria.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
@@ -3843,32 +3843,32 @@ Info (332154): The derive_clock_uncertainty command did not apply clock uncertai
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:22
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:46
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:13
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:08
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X85_Y0 to location X96_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
-Info (11888): Total time spent on timing analysis during the Fitter is 0.80 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:06
+Info (11888): Total time spent on timing analysis during the Fitter is 0.94 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:09
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:20
 Info (144001): Generated suppressed messages file E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/MemoriaCompleta/output_files/memoria.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 6789 megabytes
-    Info: Processing ended: Fri Jan 21 14:52:13 2022
-    Info: Elapsed time: 00:02:07
-    Info: Total CPU time (on all processors): 00:03:20
+    Info: Peak virtual memory: 6724 megabytes
+    Info: Processing ended: Fri Jan 21 17:18:47 2022
+    Info: Elapsed time: 00:03:18
+    Info: Total CPU time (on all processors): 00:04:23
 
 
 +----------------------------+
