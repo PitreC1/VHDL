@@ -1,5 +1,5 @@
 EDA Netlist Writer report for alu
-Thu Jan 20 07:27:04 2022
+Thu Jan 27 11:09:30 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Jan 20 07:27:04 2022 ;
+; EDA Netlist Writer Status ; Successful - Thu Jan 27 11:09:30 2022 ;
 ; Revision Name             ; alu                                   ;
 ; Top-level Entity Name     ; alu                                   ;
 ; Family                    ; Cyclone V                             ;
@@ -65,13 +65,13 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Simulation Generated Files                                                        ;
-+-----------------------------------------------------------------------------------+
-; Generated Files                                                                   ;
-+-----------------------------------------------------------------------------------+
-; E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/simulation/qsim//alu.vho ;
-+-----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                       ;
++--------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                  ;
++--------------------------------------------------------------------------------------------------+
+; E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim//alu.vho ;
++--------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -93,14 +93,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Jan 20 07:27:02 2022
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/simulation/qsim/" alu -c alu
+    Info: Processing started: Thu Jan 27 11:09:28 2022
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim/" alu -c alu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file alu.vho in folder "E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file alu.vho in folder "E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4709 megabytes
-    Info: Processing ended: Thu Jan 20 07:27:04 2022
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Thu Jan 27 11:09:31 2022
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

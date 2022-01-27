@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "01/20/2022 07:27:01"
+-- Generated on "01/27/2022 11:09:27"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          alu
 -- 
@@ -60,25 +60,37 @@ BEGIN
 -- A[7]
 t_prcs_A_7: PROCESS
 BEGIN
+	A(7) <= '1';
+	WAIT FOR 560000 ps;
 	A(7) <= '0';
+	WAIT FOR 430000 ps;
+	A(7) <= '1';
 WAIT;
 END PROCESS t_prcs_A_7;
 -- A[6]
 t_prcs_A_6: PROCESS
 BEGIN
+	A(6) <= '0';
+	WAIT FOR 560000 ps;
 	A(6) <= '1';
+	WAIT FOR 430000 ps;
+	A(6) <= '0';
 WAIT;
 END PROCESS t_prcs_A_6;
 -- A[5]
 t_prcs_A_5: PROCESS
 BEGIN
-	A(5) <= '1';
+	A(5) <= '0';
 WAIT;
 END PROCESS t_prcs_A_5;
 -- A[4]
 t_prcs_A_4: PROCESS
 BEGIN
+	A(4) <= '0';
+	WAIT FOR 560000 ps;
 	A(4) <= '1';
+	WAIT FOR 430000 ps;
+	A(4) <= '0';
 WAIT;
 END PROCESS t_prcs_A_4;
 -- A[3]
@@ -91,11 +103,19 @@ END PROCESS t_prcs_A_3;
 t_prcs_A_2: PROCESS
 BEGIN
 	A(2) <= '0';
+	WAIT FOR 560000 ps;
+	A(2) <= '1';
+	WAIT FOR 430000 ps;
+	A(2) <= '0';
 WAIT;
 END PROCESS t_prcs_A_2;
 -- A[1]
 t_prcs_A_1: PROCESS
 BEGIN
+	A(1) <= '1';
+	WAIT FOR 560000 ps;
+	A(1) <= '0';
+	WAIT FOR 430000 ps;
 	A(1) <= '1';
 WAIT;
 END PROCESS t_prcs_A_1;
@@ -105,6 +125,74 @@ BEGIN
 	A(0) <= '0';
 WAIT;
 END PROCESS t_prcs_A_0;
+-- B[7]
+t_prcs_B_7: PROCESS
+BEGIN
+	B(7) <= '0';
+	WAIT FOR 580000 ps;
+	B(7) <= '1';
+	WAIT FOR 310000 ps;
+	B(7) <= '0';
+WAIT;
+END PROCESS t_prcs_B_7;
+-- B[6]
+t_prcs_B_6: PROCESS
+BEGIN
+	B(6) <= '1';
+	WAIT FOR 580000 ps;
+	B(6) <= '0';
+	WAIT FOR 310000 ps;
+	B(6) <= '1';
+WAIT;
+END PROCESS t_prcs_B_6;
+-- B[5]
+t_prcs_B_5: PROCESS
+BEGIN
+	B(5) <= '0';
+WAIT;
+END PROCESS t_prcs_B_5;
+-- B[4]
+t_prcs_B_4: PROCESS
+BEGIN
+	B(4) <= '1';
+	WAIT FOR 580000 ps;
+	B(4) <= '0';
+	WAIT FOR 310000 ps;
+	B(4) <= '1';
+WAIT;
+END PROCESS t_prcs_B_4;
+-- B[3]
+t_prcs_B_3: PROCESS
+BEGIN
+	B(3) <= '1';
+WAIT;
+END PROCESS t_prcs_B_3;
+-- B[2]
+t_prcs_B_2: PROCESS
+BEGIN
+	B(2) <= '1';
+	WAIT FOR 580000 ps;
+	B(2) <= '0';
+	WAIT FOR 310000 ps;
+	B(2) <= '1';
+WAIT;
+END PROCESS t_prcs_B_2;
+-- B[1]
+t_prcs_B_1: PROCESS
+BEGIN
+	B(1) <= '0';
+	WAIT FOR 580000 ps;
+	B(1) <= '1';
+	WAIT FOR 310000 ps;
+	B(1) <= '0';
+WAIT;
+END PROCESS t_prcs_B_1;
+-- B[0]
+t_prcs_B_0: PROCESS
+BEGIN
+	B(0) <= '0';
+WAIT;
+END PROCESS t_prcs_B_0;
 -- ALU_Sel[2]
 t_prcs_ALU_Sel_2: PROCESS
 BEGIN
@@ -123,52 +211,4 @@ BEGIN
 	ALU_Sel(0) <= '1';
 WAIT;
 END PROCESS t_prcs_ALU_Sel_0;
--- B[7]
-t_prcs_B_7: PROCESS
-BEGIN
-	B(7) <= '0';
-WAIT;
-END PROCESS t_prcs_B_7;
--- B[6]
-t_prcs_B_6: PROCESS
-BEGIN
-	B(6) <= '1';
-WAIT;
-END PROCESS t_prcs_B_6;
--- B[5]
-t_prcs_B_5: PROCESS
-BEGIN
-	B(5) <= '0';
-WAIT;
-END PROCESS t_prcs_B_5;
--- B[4]
-t_prcs_B_4: PROCESS
-BEGIN
-	B(4) <= '1';
-WAIT;
-END PROCESS t_prcs_B_4;
--- B[3]
-t_prcs_B_3: PROCESS
-BEGIN
-	B(3) <= '1';
-WAIT;
-END PROCESS t_prcs_B_3;
--- B[2]
-t_prcs_B_2: PROCESS
-BEGIN
-	B(2) <= '1';
-WAIT;
-END PROCESS t_prcs_B_2;
--- B[1]
-t_prcs_B_1: PROCESS
-BEGIN
-	B(1) <= '0';
-WAIT;
-END PROCESS t_prcs_B_1;
--- B[0]
-t_prcs_B_0: PROCESS
-BEGIN
-	B(0) <= '0';
-WAIT;
-END PROCESS t_prcs_B_0;
 END alu_arch;

@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off alu -c alu --vector_source="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/Waveform.vwf" --testbench_file="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off alu -c alu --vector_source="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/Waveform.vwf" --testbench_file="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/simulation/qsim/" alu -c alu</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/simulation/qsim/" alu -c alu</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off alu -c alu --vector_source="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/Waveform.vwf" --testbench_file="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off alu -c alu --vector_source="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/Waveform.vwf" --testbench_file="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim/" alu -c alu</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim/" alu -c alu</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work alu.vho
@@ -20,8 +20,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -40,8 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
 </simulation_settings>*/
@@ -444,7 +440,9 @@ TRANSITION_LIST("A[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 560.0;
+		LEVEL 0 FOR 430.0;
+		LEVEL 1 FOR 10.0;
 	}
 }
 
@@ -453,7 +451,9 @@ TRANSITION_LIST("A[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 560.0;
+		LEVEL 1 FOR 430.0;
+		LEVEL 0 FOR 10.0;
 	}
 }
 
@@ -462,7 +462,7 @@ TRANSITION_LIST("A[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -471,7 +471,9 @@ TRANSITION_LIST("A[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 560.0;
+		LEVEL 1 FOR 430.0;
+		LEVEL 0 FOR 10.0;
 	}
 }
 
@@ -489,7 +491,9 @@ TRANSITION_LIST("A[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 560.0;
+		LEVEL 1 FOR 430.0;
+		LEVEL 0 FOR 10.0;
 	}
 }
 
@@ -498,7 +502,9 @@ TRANSITION_LIST("A[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 1 FOR 560.0;
+		LEVEL 0 FOR 430.0;
+		LEVEL 1 FOR 10.0;
 	}
 }
 
@@ -615,7 +621,9 @@ TRANSITION_LIST("B[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 580.0;
+		LEVEL 1 FOR 310.0;
+		LEVEL 0 FOR 110.0;
 	}
 }
 
@@ -624,7 +632,9 @@ TRANSITION_LIST("B[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 1 FOR 580.0;
+		LEVEL 0 FOR 310.0;
+		LEVEL 1 FOR 110.0;
 	}
 }
 
@@ -642,7 +652,9 @@ TRANSITION_LIST("B[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 1 FOR 580.0;
+		LEVEL 0 FOR 310.0;
+		LEVEL 1 FOR 110.0;
 	}
 }
 
@@ -660,7 +672,9 @@ TRANSITION_LIST("B[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 1 FOR 580.0;
+		LEVEL 0 FOR 310.0;
+		LEVEL 1 FOR 110.0;
 	}
 }
 
@@ -669,7 +683,9 @@ TRANSITION_LIST("B[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 580.0;
+		LEVEL 1 FOR 310.0;
+		LEVEL 0 FOR 110.0;
 	}
 }
 
@@ -810,7 +826,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ALU_Result";
+	CHANNEL = "B";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 9;
@@ -820,7 +836,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ALU_Result[7]";
+	CHANNEL = "B[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 10;
@@ -830,7 +846,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ALU_Result[6]";
+	CHANNEL = "B[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 11;
@@ -840,7 +856,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ALU_Result[5]";
+	CHANNEL = "B[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 12;
@@ -850,7 +866,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ALU_Result[4]";
+	CHANNEL = "B[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 13;
@@ -860,7 +876,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ALU_Result[3]";
+	CHANNEL = "B[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 14;
@@ -870,7 +886,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ALU_Result[2]";
+	CHANNEL = "B[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 15;
@@ -880,7 +896,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ALU_Result[1]";
+	CHANNEL = "B[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 16;
@@ -890,7 +906,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ALU_Result[0]";
+	CHANNEL = "B[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 17;
@@ -940,7 +956,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B";
+	CHANNEL = "ALU_Result";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 22;
@@ -950,7 +966,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B[7]";
+	CHANNEL = "ALU_Result[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 23;
@@ -960,7 +976,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B[6]";
+	CHANNEL = "ALU_Result[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 24;
@@ -970,7 +986,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B[5]";
+	CHANNEL = "ALU_Result[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 25;
@@ -980,7 +996,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B[4]";
+	CHANNEL = "ALU_Result[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 26;
@@ -990,7 +1006,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B[3]";
+	CHANNEL = "ALU_Result[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 27;
@@ -1000,7 +1016,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B[2]";
+	CHANNEL = "ALU_Result[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 28;
@@ -1010,7 +1026,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B[1]";
+	CHANNEL = "ALU_Result[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 29;
@@ -1020,7 +1036,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B[0]";
+	CHANNEL = "ALU_Result[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 30;

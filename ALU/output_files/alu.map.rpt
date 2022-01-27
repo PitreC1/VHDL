@@ -1,5 +1,5 @@
 Analysis & Synthesis report for alu
-Fri Dec 17 23:25:31 2021
+Wed Jan 26 19:49:38 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Dec 17 23:25:31 2021       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jan 26 19:49:37 2022       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; alu                                         ;
 ; Top-level Entity Name           ; alu                                         ;
@@ -166,13 +166,13 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                            ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
-; alu.vhd                          ; yes             ; User VHDL File  ; E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; alu.vhd                          ; yes             ; User VHDL File  ; E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------+
@@ -288,52 +288,52 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Fri Dec 17 23:24:58 2021
+    Info: Processing started: Wed Jan 26 19:49:04 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off alu -c alu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: alu-alu_arch File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 13
-    Info (12023): Found entity 1: alu File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 5
+    Info (12022): Found design unit 1: alu-alu_arch File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 13
+    Info (12023): Found entity 1: alu File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 5
 Info (12127): Elaborating entity "alu" for the top level hierarchy
-Warning (10631): VHDL Process Statement warning at alu.vhd(17): inferring latch(es) for signal or variable "ALU_Result", which holds its previous value in one or more paths through the process File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Warning (10631): VHDL Process Statement warning at alu.vhd(17): inferring latch(es) for signal or variable "NZVC", which holds its previous value in one or more paths through the process File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "NZVC[0]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "NZVC[1]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "NZVC[2]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "NZVC[3]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "ALU_Result[0]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "ALU_Result[1]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "ALU_Result[2]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "ALU_Result[3]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "ALU_Result[4]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "ALU_Result[5]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "ALU_Result[6]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Info (10041): Inferred latch for "ALU_Result[7]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at alu.vhd(17): inferring latch(es) for signal or variable "ALU_Result", which holds its previous value in one or more paths through the process File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at alu.vhd(17): inferring latch(es) for signal or variable "NZVC", which holds its previous value in one or more paths through the process File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "NZVC[0]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "NZVC[1]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "NZVC[2]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "NZVC[3]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[0]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[1]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[2]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[3]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[4]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[5]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[6]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[7]" at alu.vhd(17) File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "ALU_Result[7]$latch" merged with LATCH primitive "NZVC[3]$latch" File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-Warning (13012): Latch NZVC[0]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
-Warning (13012): Latch NZVC[1]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
-Warning (13012): Latch NZVC[2]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
-Warning (13012): Latch NZVC[3]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
-Warning (13012): Latch ALU_Result[0]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
-Warning (13012): Latch ALU_Result[1]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
-Warning (13012): Latch ALU_Result[2]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
-Warning (13012): Latch ALU_Result[3]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
-Warning (13012): Latch ALU_Result[4]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
-Warning (13012): Latch ALU_Result[5]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
-Warning (13012): Latch ALU_Result[6]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd Line: 7
+    Info (13026): Duplicate LATCH primitive "ALU_Result[7]$latch" merged with LATCH primitive "NZVC[3]$latch" File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (13012): Latch NZVC[0]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
+Warning (13012): Latch NZVC[1]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
+Warning (13012): Latch NZVC[2]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
+Warning (13012): Latch NZVC[3]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
+Warning (13012): Latch ALU_Result[0]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
+Warning (13012): Latch ALU_Result[1]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
+Warning (13012): Latch ALU_Result[2]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
+Warning (13012): Latch ALU_Result[3]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
+Warning (13012): Latch ALU_Result[4]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
+Warning (13012): Latch ALU_Result[5]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
+Warning (13012): Latch ALU_Result[6]$latch has unsafe behavior File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALU_Sel[1] File: E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd Line: 7
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -342,9 +342,9 @@ Info (21057): Implemented 81 device resources after synthesis - the final resour
     Info (21059): Implemented 12 output pins
     Info (21061): Implemented 50 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 4861 megabytes
-    Info: Processing ended: Fri Dec 17 23:25:32 2021
+    Info: Peak virtual memory: 4852 megabytes
+    Info: Processing ended: Wed Jan 26 19:49:38 2022
     Info: Elapsed time: 00:00:34
-    Info: Total CPU time (on all processors): 00:00:52
+    Info: Total CPU time (on all processors): 00:00:50
 
 

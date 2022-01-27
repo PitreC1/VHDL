@@ -1,11 +1,11 @@
 vendor_name = ModelSim
-source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/alu.vhd
-source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/Waveform.vwf
+source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/alu.vhd
+source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/Waveform.vwf
 source_file = 1, c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/timing_b.vhd
 source_file = 1, c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/timing_p.vhd
-source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/ALU/db/alu.cbx.xml
+source_file = 1, E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/db/alu.cbx.xml
 design_name = alu
 instance = comp, \NZVC[0]~output\, NZVC[0]~output, alu, 1
 instance = comp, \NZVC[1]~output\, NZVC[1]~output, alu, 1
