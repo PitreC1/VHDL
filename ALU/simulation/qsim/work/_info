@@ -17,7 +17,7 @@ Z4 DPx8 cyclonev 19 cyclonev_components 0 22 O_kVZAFaN7XDl67flUT[n1
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 Z7 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 ;`SHL]^j4UaADA9ENAN^]0
-Z8 dE:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim
+Z8 dC:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/simulation/qsim
 Z9 8alu.vho
 Z10 Falu.vho
 l0
@@ -26,9 +26,9 @@ V<Pf?Pd;W;VCmPf6QLnNRk3
 !s100 Yn71iB52FEKfNPIL2W8V13
 Z11 OV;C;10.5b;63
 32
-Z12 !s110 1643299777
+Z12 !s110 1643302808
 !i10b 1
-Z13 !s108 1643299776.000000
+Z13 !s108 1643302808.000000
 Z14 !s90 -work|work|alu.vho|
 Z15 !s107 alu.vho|
 !i113 1
@@ -70,29 +70,29 @@ VajE4c<]9dil`EA16?<?GR1
 !s100 4`Z1l[cMkNmWS<Q>@;P5M1
 R11
 32
-Z21 !s110 1643299778
+R12
 !i10b 1
-Z22 !s108 1643299778.000000
-Z23 !s90 -work|work|Waveform.vwf.vht|
-Z24 !s107 Waveform.vwf.vht|
+R13
+Z21 !s90 -work|work|Waveform.vwf.vht|
+Z22 !s107 Waveform.vwf.vht|
 !i113 1
 R16
 R17
 Aalu_arch
 R5
 R6
-Z25 DEx4 work 15 alu_vhd_vec_tst 0 22 ajE4c<]9dil`EA16?<?GR1
+Z23 DEx4 work 15 alu_vhd_vec_tst 0 22 ajE4c<]9dil`EA16?<?GR1
 l50
 L33
-Z26 VFG=Z1`9kPlFVC1JA0^5EE1
-Z27 !s100 ;oFVgBkB4R<B1e3JkE@UK1
+Z24 VFG=Z1`9kPlFVC1JA0^5EE1
+Z25 !s100 ;oFVgBkB4R<B1e3JkE@UK1
 R11
 32
-R21
+R12
 !i10b 1
+R13
+R21
 R22
-R23
-R24
 !i113 1
 R16
 R17

@@ -1,0 +1,885 @@
+Analysis & Synthesis report for pruebas_cpu_memory
+Thu Jan 27 13:14:58 2022
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |pruebas_cpu_memory|cpu:U0|control_unit:control|current_state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "memoria:U1"
+ 14. Port Connectivity Checks: "cpu:U0"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Jan 27 13:14:58 2022       ;
+; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                   ; pruebas_cpu_memory                          ;
+; Top-level Entity Name           ; pruebas_cpu_memory                          ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 258                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEFA7F31C6        ;                    ;
+; Top-level entity name                                                           ; pruebas_cpu_memory ; pruebas_cpu_memory ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
+; ../ALU/alu.vhd                   ; yes             ; User VHDL File  ; C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd                             ;         ;
+; ../Entradas/Entradas.vhd         ; yes             ; User VHDL File  ; C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Entradas/Entradas.vhd                   ;         ;
+; ../ROM/rom_128x8_sync.vhd        ; yes             ; User VHDL File  ; C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ROM/rom_128x8_sync.vhd                  ;         ;
+; ../RAM/rw_96x8_sync.vhd          ; yes             ; User VHDL File  ; C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/RAM/rw_96x8_sync.vhd                    ;         ;
+; ../data path/data_path.vhd       ; yes             ; User VHDL File  ; C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/data path/data_path.vhd                 ;         ;
+; ../Control Unit/control_unit.vhd ; yes             ; User VHDL File  ; C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd           ;         ;
+; ../MemoriaCompleta/memoria.vhd   ; yes             ; User VHDL File  ; C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/MemoriaCompleta/memoria.vhd             ;         ;
+; ../CPU/cpu.vhd                   ; yes             ; User VHDL File  ; C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/CPU/cpu.vhd                             ;         ;
+; pruebas_cpu_memory.vhd           ; yes             ; User VHDL File  ; C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimate of Logic utilization (ALMs needed) ; 0             ;
+;                                             ;               ;
+; Combinational ALUT usage for logic          ; 0             ;
+;     -- 7 input functions                    ; 0             ;
+;     -- 6 input functions                    ; 0             ;
+;     -- 5 input functions                    ; 0             ;
+;     -- 4 input functions                    ; 0             ;
+;     -- <=3 input functions                  ; 0             ;
+;                                             ;               ;
+; Dedicated logic registers                   ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 258           ;
+;                                             ;               ;
+; Total DSP Blocks                            ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; port_in_00[0] ;
+; Maximum fan-out                             ; 1             ;
+; Total fan-out                               ; 258           ;
+; Average fan-out                             ; 0.50          ;
++---------------------------------------------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name        ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------------+--------------+
+; |pruebas_cpu_memory        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 258  ; 0            ; |pruebas_cpu_memory ; pruebas_cpu_memory ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |pruebas_cpu_memory|cpu:U0|control_unit:control|current_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++---------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+--------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+--------------------------+-------------------------+-------------------------+-------------------------+
+; Name                      ; current_state.S_BEQ_7 ; current_state.S_BEQ_6 ; current_state.S_BEQ_5 ; current_state.S_BEQ_4 ; current_state.S_BRA_6 ; current_state.S_BRA_5 ; current_state.S_BRA_4 ; current_state.S_ADD_AB_4 ; current_state.S_STA_DIR_7 ; current_state.S_STA_DIR_6 ; current_state.S_STA_DIR_5 ; current_state.S_STA_DIR_4 ; current_state.S_LDA_DIR_8 ; current_state.S_LDA_DIR_7 ; current_state.S_LDA_DIR_6 ; current_state.S_LDA_DIR_5 ; current_state.S_LDA_DIR_4 ; current_state.S_LDA_IMM_6 ; current_state.S_LDA_IMM_5 ; current_state.S_LDA_IMM_4 ; current_state.S_DECODE_3 ; current_state.S_FETCH_2 ; current_state.S_FETCH_1 ; current_state.S_FETCH_0 ;
++---------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+--------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+--------------------------+-------------------------+-------------------------+-------------------------+
+; current_state.S_FETCH_0   ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 0                       ;
+; current_state.S_FETCH_1   ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 1                       ; 1                       ;
+; current_state.S_FETCH_2   ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 1                       ; 0                       ; 1                       ;
+; current_state.S_DECODE_3  ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_LDA_IMM_4 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_LDA_IMM_5 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_LDA_IMM_6 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_LDA_DIR_4 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_LDA_DIR_5 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_LDA_DIR_6 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_LDA_DIR_7 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_LDA_DIR_8 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_STA_DIR_4 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_STA_DIR_5 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_STA_DIR_6 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_STA_DIR_7 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 1                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_ADD_AB_4  ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_BRA_4     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_BRA_5     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_BRA_6     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_BEQ_4     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_BEQ_5     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_BEQ_6     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
+; current_state.S_BEQ_7     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                        ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                         ; 0                        ; 0                       ; 0                       ; 1                       ;
++---------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+--------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+---------------------------+--------------------------+-------------------------+-------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                  ;
++-------------------------------------------------------+---------------------------------------------+
+; Register name                                         ; Reason for Removal                          ;
++-------------------------------------------------------+---------------------------------------------+
+; cpu:U0|data_path:data|B[0..7]                         ; Stuck at GND due to stuck port clock_enable ;
+; memoria:U1|Entradas:ports_out|port_out_00[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_01[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_02[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_03[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_04[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_05[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_06[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_07[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_08[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_09[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_10[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_11[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_12[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_13[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_14[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; memoria:U1|Entradas:ports_out|port_out_15[0..7]       ; Stuck at GND due to stuck port data_in      ;
+; cpu:U0|data_path:data|MAR[0..7]                       ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_LDA_DIR_4 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_ADD_AB_4  ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_BEQ_7     ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_LDA_DIR_5 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_LDA_DIR_6 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_LDA_DIR_7 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_LDA_DIR_8 ; Lost fanout                                 ;
+; cpu:U0|data_path:data|IR[0..7]                        ; Lost fanout                                 ;
+; cpu:U0|data_path:data|CCR_Result[2]                   ; Lost fanout                                 ;
+; cpu:U0|data_path:data|PC_uns[7]                       ; Lost fanout                                 ;
+; cpu:U0|data_path:data|A[7]                            ; Lost fanout                                 ;
+; cpu:U0|data_path:data|PC_uns[6]                       ; Lost fanout                                 ;
+; cpu:U0|data_path:data|A[6]                            ; Lost fanout                                 ;
+; cpu:U0|data_path:data|PC_uns[5]                       ; Lost fanout                                 ;
+; cpu:U0|data_path:data|A[5]                            ; Lost fanout                                 ;
+; cpu:U0|data_path:data|PC_uns[4]                       ; Lost fanout                                 ;
+; cpu:U0|data_path:data|A[4]                            ; Lost fanout                                 ;
+; cpu:U0|data_path:data|PC_uns[3]                       ; Lost fanout                                 ;
+; cpu:U0|data_path:data|A[3]                            ; Lost fanout                                 ;
+; cpu:U0|data_path:data|PC_uns[2]                       ; Lost fanout                                 ;
+; cpu:U0|data_path:data|A[2]                            ; Lost fanout                                 ;
+; cpu:U0|data_path:data|PC_uns[1]                       ; Lost fanout                                 ;
+; cpu:U0|data_path:data|A[1]                            ; Lost fanout                                 ;
+; cpu:U0|data_path:data|PC_uns[0]                       ; Lost fanout                                 ;
+; cpu:U0|data_path:data|A[0]                            ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_FETCH_0   ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_FETCH_1   ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_FETCH_2   ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_DECODE_3  ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_LDA_IMM_4 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_LDA_IMM_5 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_LDA_IMM_6 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_STA_DIR_4 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_STA_DIR_5 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_STA_DIR_6 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_STA_DIR_7 ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_BRA_4     ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_BRA_5     ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_BRA_6     ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_BEQ_4     ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_BEQ_5     ; Lost fanout                                 ;
+; cpu:U0|control_unit:control|current_state.S_BEQ_6     ; Lost fanout                                 ;
+; Total Number of Removed Registers = 193               ;                                             ;
++-------------------------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                ;
++-------------------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------+
+; Register name                                         ; Reason for Removal             ; Registers Removed due to This Register                                            ;
++-------------------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------+
+; memoria:U1|Entradas:ports_out|port_out_00[0]          ; Stuck at GND                   ; cpu:U0|data_path:data|MAR[7], cpu:U0|data_path:data|MAR[6],                       ;
+;                                                       ; due to stuck port data_in      ; cpu:U0|data_path:data|MAR[5], cpu:U0|data_path:data|MAR[4],                       ;
+;                                                       ;                                ; cpu:U0|data_path:data|MAR[3], cpu:U0|data_path:data|MAR[2],                       ;
+;                                                       ;                                ; cpu:U0|data_path:data|MAR[1], cpu:U0|data_path:data|MAR[0],                       ;
+;                                                       ;                                ; cpu:U0|data_path:data|IR[7], cpu:U0|data_path:data|IR[5],                         ;
+;                                                       ;                                ; cpu:U0|data_path:data|IR[4], cpu:U0|data_path:data|CCR_Result[2],                 ;
+;                                                       ;                                ; cpu:U0|data_path:data|PC_uns[7], cpu:U0|data_path:data|A[7],                      ;
+;                                                       ;                                ; cpu:U0|data_path:data|PC_uns[6], cpu:U0|data_path:data|PC_uns[5],                 ;
+;                                                       ;                                ; cpu:U0|data_path:data|PC_uns[4], cpu:U0|data_path:data|PC_uns[3],                 ;
+;                                                       ;                                ; cpu:U0|data_path:data|PC_uns[2], cpu:U0|data_path:data|PC_uns[1],                 ;
+;                                                       ;                                ; cpu:U0|data_path:data|PC_uns[0],                                                  ;
+;                                                       ;                                ; cpu:U0|control_unit:control|current_state.S_FETCH_1,                              ;
+;                                                       ;                                ; cpu:U0|control_unit:control|current_state.S_FETCH_2,                              ;
+;                                                       ;                                ; cpu:U0|control_unit:control|current_state.S_LDA_IMM_5,                            ;
+;                                                       ;                                ; cpu:U0|control_unit:control|current_state.S_LDA_IMM_6,                            ;
+;                                                       ;                                ; cpu:U0|control_unit:control|current_state.S_STA_DIR_5,                            ;
+;                                                       ;                                ; cpu:U0|control_unit:control|current_state.S_STA_DIR_6,                            ;
+;                                                       ;                                ; cpu:U0|control_unit:control|current_state.S_STA_DIR_7,                            ;
+;                                                       ;                                ; cpu:U0|control_unit:control|current_state.S_BRA_6,                                ;
+;                                                       ;                                ; cpu:U0|control_unit:control|current_state.S_BEQ_6                                 ;
+; memoria:U1|Entradas:ports_out|port_out_00[5]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_06[5],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_09[5],                                     ;
+;                                                       ;                                ; memoria:U1|Entradas:ports_out|port_out_10[1],                                     ;
+;                                                       ;                                ; memoria:U1|Entradas:ports_out|port_out_11[7]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_02[5]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_07[5],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_09[1],                                     ;
+;                                                       ;                                ; memoria:U1|Entradas:ports_out|port_out_10[3],                                     ;
+;                                                       ;                                ; memoria:U1|Entradas:ports_out|port_out_11[6]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_01[5]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_06[1],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_09[7],                                     ;
+;                                                       ;                                ; memoria:U1|Entradas:ports_out|port_out_10[0]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_03[5]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_07[1],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_09[3],                                     ;
+;                                                       ;                                ; memoria:U1|Entradas:ports_out|port_out_10[2]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_04[5]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_08[5],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_10[5],                                     ;
+;                                                       ;                                ; memoria:U1|Entradas:ports_out|port_out_11[5]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_05[5]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_08[1],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_10[7],                                     ;
+;                                                       ;                                ; memoria:U1|Entradas:ports_out|port_out_11[4]                                      ;
+; cpu:U0|control_unit:control|current_state.S_LDA_DIR_4 ; Lost Fanouts                   ; cpu:U0|data_path:data|IR[3], cpu:U0|control_unit:control|current_state.S_DECODE_3 ;
+; memoria:U1|Entradas:ports_out|port_out_01[1]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_06[3],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_09[6]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_00[1]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_06[7],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_09[4]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_02[1]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_07[7],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_09[0]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_03[1]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_07[3],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_09[2]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_04[1]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_08[7],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_10[4]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_05[1]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_08[3],                                     ;
+;                                                       ; due to stuck port data_in      ; memoria:U1|Entradas:ports_out|port_out_10[6]                                      ;
+; memoria:U1|Entradas:ports_out|port_out_00[3]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_06[6]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_00[7]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_06[4]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_01[3]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_06[2]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_01[7]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_06[0]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; cpu:U0|data_path:data|B[7]                            ; Stuck at GND                   ; cpu:U0|data_path:data|IR[6]                                                       ;
+;                                                       ; due to stuck port clock_enable ;                                                                                   ;
+; cpu:U0|data_path:data|B[6]                            ; Stuck at GND                   ; cpu:U0|data_path:data|A[6]                                                        ;
+;                                                       ; due to stuck port clock_enable ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_02[7]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_07[4]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; cpu:U0|data_path:data|B[5]                            ; Stuck at GND                   ; cpu:U0|data_path:data|A[5]                                                        ;
+;                                                       ; due to stuck port clock_enable ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_03[3]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_07[2]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; cpu:U0|data_path:data|B[4]                            ; Stuck at GND                   ; cpu:U0|data_path:data|A[4]                                                        ;
+;                                                       ; due to stuck port clock_enable ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_03[7]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_07[0]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; cpu:U0|data_path:data|B[3]                            ; Stuck at GND                   ; cpu:U0|data_path:data|A[3]                                                        ;
+;                                                       ; due to stuck port clock_enable ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_04[3]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_08[6]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; cpu:U0|data_path:data|B[2]                            ; Stuck at GND                   ; cpu:U0|data_path:data|A[2]                                                        ;
+;                                                       ; due to stuck port clock_enable ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_04[7]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_08[4]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; cpu:U0|data_path:data|B[1]                            ; Stuck at GND                   ; cpu:U0|data_path:data|A[1]                                                        ;
+;                                                       ; due to stuck port clock_enable ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_05[3]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_08[2]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; cpu:U0|data_path:data|B[0]                            ; Stuck at GND                   ; cpu:U0|data_path:data|A[0]                                                        ;
+;                                                       ; due to stuck port clock_enable ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_05[7]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_08[0]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_11[1]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_11[3]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_12[1]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_12[7]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_12[3]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_12[6]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
+; memoria:U1|Entradas:ports_out|port_out_02[3]          ; Stuck at GND                   ; memoria:U1|Entradas:ports_out|port_out_07[6]                                      ;
+;                                                       ; due to stuck port data_in      ;                                                                                   ;
++-------------------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |pruebas_cpu_memory|cpu:U0|data_path:data|PC_uns[6]         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |pruebas_cpu_memory|cpu:U0|data_path:data|Mux9              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |pruebas_cpu_memory|cpu:U0|control_unit:control|Bus2_Sel[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memoria:U1"                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; data_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:U0"                                                                                  ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; to_memory ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+; boundary_port         ; 258                         ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Thu Jan 27 13:14:35 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pruebas_cpu_memory -c pruebas_cpu_memory
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/carlos pitre/onedrive/documentos/primer parcial/alu/alu.vhd
+    Info (12022): Found design unit 1: alu-alu_arch File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 13
+    Info (12023): Found entity 1: alu File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/carlos pitre/onedrive/documentos/primer parcial/entradas/entradas.vhd
+    Info (12022): Found design unit 1: Entradas-Entradas_arch File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Entradas/Entradas.vhd Line: 18
+    Info (12023): Found entity 1: Entradas File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Entradas/Entradas.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/carlos pitre/onedrive/documentos/primer parcial/rom/rom_128x8_sync.vhd
+    Info (12022): Found design unit 1: rom_128x8_sync-rom_128x8_sync_arch File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ROM/rom_128x8_sync.vhd Line: 12
+    Info (12023): Found entity 1: rom_128x8_sync File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ROM/rom_128x8_sync.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/carlos pitre/onedrive/documentos/primer parcial/ram/rw_96x8_sync.vhd
+    Info (12022): Found design unit 1: rw_96x8_sync-rw_96x8_sync_arch File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/RAM/rw_96x8_sync.vhd Line: 14
+    Info (12023): Found entity 1: rw_96x8_sync File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/RAM/rw_96x8_sync.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/carlos pitre/onedrive/documentos/primer parcial/data path/data_path.vhd
+    Info (12022): Found design unit 1: data_path-data_path_arch File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/data path/data_path.vhd Line: 16
+    Info (12023): Found entity 1: data_path File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/data path/data_path.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/carlos pitre/onedrive/documentos/primer parcial/control unit/control_unit.vhd
+    Info (12022): Found design unit 1: control_unit-control_unit_arch File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 17
+    Info (12023): Found entity 1: control_unit File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/carlos pitre/onedrive/documentos/primer parcial/memoriacompleta/memoria.vhd
+    Info (12022): Found design unit 1: memoria-memoria_arch File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/MemoriaCompleta/memoria.vhd Line: 23
+    Info (12023): Found entity 1: memoria File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/MemoriaCompleta/memoria.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/carlos pitre/onedrive/documentos/primer parcial/cpu/cpu.vhd
+    Info (12022): Found design unit 1: cpu-cpu_arch File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/CPU/cpu.vhd Line: 14
+    Info (12023): Found entity 1: cpu File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/CPU/cpu.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pruebas_cpu_memory.vhd
+    Info (12022): Found design unit 1: pruebas_cpu_memory-pruebas_arch File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 20
+    Info (12023): Found entity 1: pruebas_cpu_memory File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 5
+Info (12127): Elaborating entity "pruebas_cpu_memory" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at pruebas_cpu_memory.vhd(22): object "to_memory" assigned a value but never read File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 22
+Warning (10541): VHDL Signal Declaration warning at pruebas_cpu_memory.vhd(22): used implicit default value for signal "data_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 22
+Warning (10541): VHDL Signal Declaration warning at pruebas_cpu_memory.vhd(22): used implicit default value for signal "from_memory" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 22
+Warning (10036): Verilog HDL or VHDL warning at pruebas_cpu_memory.vhd(22): object "data_out" assigned a value but never read File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 22
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:U0" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 50
+Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:U0|control_unit:control" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/CPU/cpu.vhd Line: 53
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(183): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(196): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 196
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(209): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 209
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(222): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 222
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(235): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 235
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(248): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 248
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(248): signal "CCR_Result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 248
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(261): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 261
+Warning (10492): VHDL Process Statement warning at control_unit.vhd(261): signal "CCR_Result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 261
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "IR_Load", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "MAR_Load", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "PC_Load", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "PC_Inc", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "A_Load", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "B_Load", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "ALU_Sel", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "CCR_Load", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "Bus1_Sel", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "Bus2_Sel", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Warning (10631): VHDL Process Statement warning at control_unit.vhd(140): inferring latch(es) for signal or variable "writen", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "writen" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "Bus2_Sel[0]" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "Bus2_Sel[1]" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "Bus1_Sel[0]" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "Bus1_Sel[1]" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "CCR_Load" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "ALU_Sel[0]" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "ALU_Sel[1]" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "ALU_Sel[2]" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "B_Load" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "A_Load" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "PC_Inc" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "PC_Load" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "MAR_Load" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (10041): Inferred latch for "IR_Load" at control_unit.vhd(140) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/Control Unit/control_unit.vhd Line: 140
+Info (12128): Elaborating entity "data_path" for hierarchy "cpu:U0|data_path:data" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/CPU/cpu.vhd Line: 57
+Info (12128): Elaborating entity "alu" for hierarchy "cpu:U0|data_path:data|alu:A0" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/data path/data_path.vhd Line: 36
+Warning (10631): VHDL Process Statement warning at alu.vhd(17): inferring latch(es) for signal or variable "ALU_Result", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (10631): VHDL Process Statement warning at alu.vhd(17): inferring latch(es) for signal or variable "NZVC", which holds its previous value in one or more paths through the process File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "NZVC[0]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "NZVC[1]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "NZVC[2]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "NZVC[3]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[0]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[1]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[2]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[3]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[4]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[5]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[6]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (10041): Inferred latch for "ALU_Result[7]" at alu.vhd(17) File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Info (12128): Elaborating entity "memoria" for hierarchy "memoria:U1" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 51
+Info (12128): Elaborating entity "rom_128x8_sync" for hierarchy "memoria:U1|rom_128x8_sync:rom" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/MemoriaCompleta/memoria.vhd Line: 55
+Info (12128): Elaborating entity "rw_96x8_sync" for hierarchy "memoria:U1|rw_96x8_sync:ram" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/MemoriaCompleta/memoria.vhd Line: 56
+Info (12128): Elaborating entity "Entradas" for hierarchy "memoria:U1|Entradas:ports_out" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/MemoriaCompleta/memoria.vhd Line: 57
+Warning (14026): LATCH primitive "cpu:U0|data_path:data|alu:A0|ALU_Result[4]" is permanently enabled File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (14026): LATCH primitive "cpu:U0|data_path:data|alu:A0|ALU_Result[3]" is permanently enabled File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (14026): LATCH primitive "cpu:U0|data_path:data|alu:A0|ALU_Result[2]" is permanently enabled File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (14026): LATCH primitive "cpu:U0|data_path:data|alu:A0|ALU_Result[1]" is permanently enabled File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (14026): LATCH primitive "cpu:U0|data_path:data|alu:A0|ALU_Result[0]" is permanently enabled File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (14026): LATCH primitive "cpu:U0|data_path:data|alu:A0|NZVC[2]" is permanently enabled File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (14026): LATCH primitive "cpu:U0|data_path:data|alu:A0|ALU_Result[6]" is permanently enabled File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (14026): LATCH primitive "cpu:U0|data_path:data|alu:A0|ALU_Result[7]" is permanently enabled File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (14026): LATCH primitive "cpu:U0|data_path:data|alu:A0|ALU_Result[5]" is permanently enabled File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/alu.vhd Line: 17
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "port_out_00[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_00[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_00[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_00[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_00[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_00[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_00[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_00[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_01[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_01[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_01[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_01[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_01[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_01[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_01[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_01[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_02[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_02[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_02[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_02[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_02[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_02[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_02[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_02[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_03[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_03[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_03[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_03[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_03[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_03[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_03[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_03[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 13
+    Warning (13410): Pin "port_out_04[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_04[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_04[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_04[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_04[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_04[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_04[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_04[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_05[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_05[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_05[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_05[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_05[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_05[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_05[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_05[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_06[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_06[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_06[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_06[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_06[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_06[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_06[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_06[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_07[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_07[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_07[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_07[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_07[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_07[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_07[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_07[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 14
+    Warning (13410): Pin "port_out_08[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_08[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_08[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_08[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_08[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_08[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_08[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_08[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_09[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_09[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_09[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_09[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_09[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_09[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_09[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_09[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_10[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_10[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_10[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_10[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_10[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_10[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_10[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_10[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_11[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_11[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_11[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_11[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_11[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_11[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_11[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_11[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 15
+    Warning (13410): Pin "port_out_12[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_12[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_12[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_12[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_12[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_12[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_12[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_12[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_13[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_13[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_13[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_13[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_13[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_13[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_13[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_13[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_14[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_14[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_14[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_14[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_14[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_14[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_14[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_14[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_15[0]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_15[1]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_15[2]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_15[3]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_15[4]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_15[5]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_15[6]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+    Warning (13410): Pin "port_out_15[7]" is stuck at GND File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 16
+Info (17049): 57 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 130 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "port_in_00[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_00[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_00[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_00[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_00[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_00[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_00[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_00[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_01[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_01[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_01[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_01[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_01[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_01[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_01[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_01[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_02[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_02[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_02[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_02[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_02[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_02[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_02[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_02[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_03[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_03[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_03[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_03[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_03[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_03[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_03[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_03[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 8
+    Warning (15610): No output dependent on input pin "port_in_04[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_04[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_04[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_04[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_04[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_04[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_04[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_04[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_05[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_05[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_05[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_05[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_05[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_05[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_05[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_05[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_06[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_06[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_06[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_06[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_06[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_06[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_06[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_06[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_07[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_07[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_07[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_07[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_07[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_07[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_07[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_07[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 9
+    Warning (15610): No output dependent on input pin "port_in_08[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_08[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_08[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_08[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_08[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_08[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_08[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_08[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_09[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_09[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_09[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_09[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_09[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_09[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_09[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_09[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_10[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_10[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_10[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_10[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_10[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_10[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_10[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_10[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_11[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_11[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_11[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_11[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_11[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_11[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_11[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_11[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 10
+    Warning (15610): No output dependent on input pin "port_in_12[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_12[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_12[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_12[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_12[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_12[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_12[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_12[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_13[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_13[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_13[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_13[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_13[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_13[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_13[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_13[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_14[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_14[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_14[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_14[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_14[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_14[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_14[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_14[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_15[0]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_15[1]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_15[2]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_15[3]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_15[4]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_15[5]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_15[6]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "port_in_15[7]" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 11
+    Warning (15610): No output dependent on input pin "clock" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 6
+    Warning (15610): No output dependent on input pin "reset" File: C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_Elementos/pruebas_cpu_memory.vhd Line: 7
+Info (21057): Implemented 258 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 130 input pins
+    Info (21059): Implemented 128 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 296 warnings
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Thu Jan 27 13:14:58 2022
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:47
+
+
