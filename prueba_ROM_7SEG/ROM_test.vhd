@@ -2,9 +2,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity ROM_test is 
-	port( address : in std_logic_vector(0 downto 7);
+	port( address : in std_logic_vector(7 downto 0);
 			clock : in std_logic;
-			hex0, hex1 : out std_logic_Vector(0 downto 7));
+			hex0, hex1 : out std_logic_Vector(0 to 7));
 
 end entity;
 
@@ -25,14 +25,21 @@ architecture ROM_test_arch of ROM_test is
 	
 	end component;
 	
-	signal data_out : std_logic_vector(0 downto 7);
+	signal data_out : std_logic_vector(7 downto 0);
+	signal data_out1 : std_logic_vector(2 downto 0) := data_out(2 downto 0);
+	signal pb1 : std_logic := data_out(3);
+	signal data_out2 : std_logic_vector(2 downto 0) := data_out(6 downto 4);
+	signal pb2 : std_logic := data_out(7);
+	
 	
 	begin
 	
-		S0 : seven_segments port map (data_out(1,2,3), data_out(0),hex0);
-		
-		S1 : seven_segments port map(data_out(5,6,7), data_out(4), hex1);
-		
 		rom : rom_128x8_sync port map (clock, address, data_out);
+	
+		S0 : seven_segments port map (data_out1, pb1,hex0);
+		
+		S1 : seven_segments port map(data_out2, pb2 ,hex1);
+		
+
 		
 end architecture;

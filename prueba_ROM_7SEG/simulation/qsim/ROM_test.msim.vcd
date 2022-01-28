@@ -1,0 +1,318 @@
+$comment
+	File created using the following command:
+		vcd file ROM_test.msim.vcd -direction
+$end
+$date
+	Thu Jan 27 17:42:20 2022
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module ROM_test_vlg_vec_tst $end
+$var reg 8 ! address [7:0] $end
+$var reg 1 " clock $end
+$var wire 1 # hex0 [0] $end
+$var wire 1 $ hex0 [1] $end
+$var wire 1 % hex0 [2] $end
+$var wire 1 & hex0 [3] $end
+$var wire 1 ' hex0 [4] $end
+$var wire 1 ( hex0 [5] $end
+$var wire 1 ) hex0 [6] $end
+$var wire 1 * hex0 [7] $end
+$var wire 1 + hex1 [0] $end
+$var wire 1 , hex1 [1] $end
+$var wire 1 - hex1 [2] $end
+$var wire 1 . hex1 [3] $end
+$var wire 1 / hex1 [4] $end
+$var wire 1 0 hex1 [5] $end
+$var wire 1 1 hex1 [6] $end
+$var wire 1 2 hex1 [7] $end
+$var wire 1 3 sampler $end
+$scope module i1 $end
+$var wire 1 4 gnd $end
+$var wire 1 5 vcc $end
+$var wire 1 6 unknown $end
+$var tri1 1 7 devclrn $end
+$var tri1 1 8 devpor $end
+$var tri1 1 9 devoe $end
+$var wire 1 : hex0[7]~output_o $end
+$var wire 1 ; hex0[6]~output_o $end
+$var wire 1 < hex0[5]~output_o $end
+$var wire 1 = hex0[4]~output_o $end
+$var wire 1 > hex0[3]~output_o $end
+$var wire 1 ? hex0[2]~output_o $end
+$var wire 1 @ hex0[1]~output_o $end
+$var wire 1 A hex0[0]~output_o $end
+$var wire 1 B hex1[7]~output_o $end
+$var wire 1 C hex1[6]~output_o $end
+$var wire 1 D hex1[5]~output_o $end
+$var wire 1 E hex1[4]~output_o $end
+$var wire 1 F hex1[3]~output_o $end
+$var wire 1 G hex1[2]~output_o $end
+$var wire 1 H hex1[1]~output_o $end
+$var wire 1 I hex1[0]~output_o $end
+$var wire 1 J clock~input_o $end
+$var wire 1 K clock~inputclkctrl_outclk $end
+$var wire 1 L address[3]~input_o $end
+$var wire 1 M address[4]~input_o $end
+$var wire 1 N address[5]~input_o $end
+$var wire 1 O address[6]~input_o $end
+$var wire 1 P rom|Mux2~2_combout $end
+$var wire 1 Q address[0]~input_o $end
+$var wire 1 R address[2]~input_o $end
+$var wire 1 S rom|Mux5~0_combout $end
+$var wire 1 T address[7]~input_o $end
+$var wire 1 U address[1]~input_o $end
+$var wire 1 V rom|Mux6~2_combout $end
+$var wire 1 W rom|Mux6~3_combout $end
+$var wire 1 X rom|Mux5~1_combout $end
+$var wire 1 Y rom|Mux4~0_combout $end
+$var wire 1 Z S0|Mux6~0_combout $end
+$var wire 1 [ S0|Mux5~0_combout $end
+$var wire 1 \ S0|Mux4~0_combout $end
+$var wire 1 ] S0|Mux3~0_combout $end
+$var wire 1 ^ S0|Mux2~0_combout $end
+$var wire 1 _ S0|Mux1~0_combout $end
+$var wire 1 ` rom|Mux2~3_combout $end
+$var wire 1 a rom|Mux2~4_combout $end
+$var wire 1 b rom|Mux1~0_combout $end
+$var wire 1 c rom|Mux3~0_combout $end
+$var wire 1 d S1|Mux6~0_combout $end
+$var wire 1 e S1|Mux5~0_combout $end
+$var wire 1 f S1|Mux4~0_combout $end
+$var wire 1 g S1|Mux3~0_combout $end
+$var wire 1 h S1|Mux2~0_combout $end
+$var wire 1 i S1|Mux1~0_combout $end
+$var wire 1 j S1|Mux0~0_combout $end
+$var wire 1 k rom|data_out [7] $end
+$var wire 1 l rom|data_out [6] $end
+$var wire 1 m rom|data_out [5] $end
+$var wire 1 n rom|data_out [4] $end
+$var wire 1 o rom|data_out [3] $end
+$var wire 1 p rom|data_out [2] $end
+$var wire 1 q rom|data_out [1] $end
+$var wire 1 r rom|data_out [0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b11 !
+1"
+1*
+1)
+0(
+0'
+0&
+0%
+0$
+0#
+12
+11
+00
+0/
+0.
+0-
+0,
+0+
+x3
+04
+15
+x6
+17
+18
+19
+1:
+1;
+0<
+0=
+0>
+0?
+0@
+0A
+1B
+1C
+0D
+0E
+0F
+0G
+0H
+0I
+1J
+1K
+0L
+0M
+0N
+0O
+1P
+1Q
+0R
+0S
+0T
+1U
+1V
+0W
+1X
+0Y
+0Z
+0[
+0\
+0]
+0^
+1_
+1`
+1a
+1b
+0c
+0d
+0e
+0f
+0g
+0h
+0i
+0j
+zr
+0q
+0p
+0o
+0n
+0m
+0l
+0k
+$end
+#40000
+0"
+0J
+0K
+03
+#80000
+1"
+1J
+1K
+13
+1l
+1m
+1k
+1d
+1i
+1h
+0C
+1H
+1G
+01
+1,
+1-
+#120000
+0"
+0J
+0K
+03
+#160000
+1"
+1J
+1K
+13
+#200000
+0"
+0J
+0K
+03
+#240000
+1"
+1J
+1K
+13
+#280000
+0"
+0J
+0K
+03
+#320000
+1"
+1J
+1K
+13
+#360000
+0"
+0J
+0K
+03
+#400000
+1"
+1J
+1K
+13
+#440000
+0"
+0J
+0K
+03
+#480000
+1"
+1J
+1K
+13
+#520000
+0"
+0J
+0K
+03
+#560000
+1"
+1J
+1K
+13
+#600000
+0"
+0J
+0K
+03
+#640000
+1"
+1J
+1K
+13
+#680000
+0"
+0J
+0K
+03
+#720000
+1"
+1J
+1K
+13
+#760000
+0"
+0J
+0K
+03
+#800000
+1"
+1J
+1K
+13
+#840000
+0"
+0J
+0K
+03
+#880000
+1"
+1J
+1K
+13
+#920000
+0"
+0J
+0K
+03
+#960000
+1"
+1J
+1K
+13
+#1000000

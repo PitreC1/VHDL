@@ -1,5 +1,5 @@
 Flow report for Entradas
-Thu Dec 16 12:11:17 2021
+Thu Jan 27 15:39:48 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Dec 16 12:11:17 2021       ;
+; Flow Status                     ; Successful - Thu Jan 27 15:39:48 2022       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; Entradas                                    ;
 ; Top-level Entity Name           ; Entradas                                    ;
@@ -101,7 +101,11 @@ refer to the applicable agreement for further details.
 ; Assembler            ; 00:00:10     ; 1.0                     ; 4827 MB             ; 00:00:09                           ;
 ; Timing Analyzer      ; 00:00:16     ; 1.0                     ; 5106 MB             ; 00:00:11                           ;
 ; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 4729 MB             ; 00:00:02                           ;
-; Total                ; 00:02:11     ; --                      ; --                  ; 00:03:10                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4707 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4707 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4707 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4716 MB             ; 00:00:02                           ;
+; Total                ; 00:02:20     ; --                      ; --                  ; 00:03:17                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,6 +119,10 @@ refer to the applicable agreement for further details.
 ; Assembler            ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -126,6 +134,10 @@ quartus_fit --read_settings_files=off --write_settings_files=off Entradas -c Ent
 quartus_asm --read_settings_files=off --write_settings_files=off Entradas -c Entradas
 quartus_sta Entradas -c Entradas
 quartus_eda --read_settings_files=off --write_settings_files=off Entradas -c Entradas
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Entradas -c Entradas --vector_source="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Entradas/Waveform.vwf" --testbench_file="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Entradas/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Entradas -c Entradas --vector_source="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Entradas/Waveform.vwf" --testbench_file="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Entradas/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Entradas -c Entradas --vector_source="C:\Users\Carlos Pitre\OneDrive\Documentos\Primer Parcial\Entradas\Waveform.vwf" --testbench_file="C:\Users\Carlos Pitre\OneDrive\Documentos\Primer Parcial\Entradas\simulation\qsim\Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:\Users\Carlos Pitre\OneDrive\Documentos\Primer Parcial\Entradas\simulation\qsim" Entradas -c Entradas
 
 
 
