@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "01/27/2022 15:06:12"
+-- Generated on "02/01/2022 22:29:17"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          rw_96x8_sync
 -- 
@@ -57,6 +57,27 @@ BEGIN
 	data_out => data_out,
 	writen => writen
 	);
+
+-- clock
+t_prcs_clock: PROCESS
+BEGIN
+LOOP
+	clock <= '0';
+	WAIT FOR 25000 ps;
+	clock <= '1';
+	WAIT FOR 25000 ps;
+	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+END LOOP;
+END PROCESS t_prcs_clock;
+
+-- writen
+t_prcs_writen: PROCESS
+BEGIN
+	writen <= '1';
+	WAIT FOR 500000 ps;
+	writen <= '0';
+WAIT;
+END PROCESS t_prcs_writen;
 -- address[7]
 t_prcs_address_7: PROCESS
 BEGIN
@@ -79,86 +100,67 @@ END PROCESS t_prcs_address_5;
 t_prcs_address_4: PROCESS
 BEGIN
 	address(4) <= '0';
-	WAIT FOR 640000 ps;
-	address(4) <= '1';
 WAIT;
 END PROCESS t_prcs_address_4;
 -- address[3]
 t_prcs_address_3: PROCESS
 BEGIN
 	address(3) <= '0';
-	WAIT FOR 320000 ps;
-	address(3) <= '1';
-	WAIT FOR 320000 ps;
-	address(3) <= '0';
-	WAIT FOR 320000 ps;
+	WAIT FOR 980000 ps;
 	address(3) <= '1';
 WAIT;
 END PROCESS t_prcs_address_3;
 -- address[2]
 t_prcs_address_2: PROCESS
 BEGIN
-	FOR i IN 1 TO 3
-	LOOP
-		address(2) <= '0';
-		WAIT FOR 160000 ps;
-		address(2) <= '1';
-		WAIT FOR 160000 ps;
-	END LOOP;
+	address(2) <= '0';
+	WAIT FOR 400000 ps;
+	address(2) <= '1';
+	WAIT FOR 100000 ps;
+	address(2) <= '0';
+	WAIT FOR 400000 ps;
+	address(2) <= '1';
+	WAIT FOR 80000 ps;
 	address(2) <= '0';
 WAIT;
 END PROCESS t_prcs_address_2;
 -- address[1]
 t_prcs_address_1: PROCESS
 BEGIN
-	FOR i IN 1 TO 6
-	LOOP
-		address(1) <= '0';
-		WAIT FOR 80000 ps;
-		address(1) <= '1';
-		WAIT FOR 80000 ps;
-	END LOOP;
+	address(1) <= '0';
+	WAIT FOR 200000 ps;
+	address(1) <= '1';
+	WAIT FOR 200000 ps;
+	address(1) <= '0';
+	WAIT FOR 300000 ps;
+	address(1) <= '1';
+	WAIT FOR 200000 ps;
 	address(1) <= '0';
 WAIT;
 END PROCESS t_prcs_address_1;
 -- address[0]
 t_prcs_address_0: PROCESS
 BEGIN
-	FOR i IN 1 TO 12
+	FOR i IN 1 TO 2
 	LOOP
 		address(0) <= '0';
-		WAIT FOR 40000 ps;
+		WAIT FOR 100000 ps;
 		address(0) <= '1';
-		WAIT FOR 40000 ps;
+		WAIT FOR 100000 ps;
 	END LOOP;
 	address(0) <= '0';
+	WAIT FOR 200000 ps;
+	address(0) <= '1';
+	WAIT FOR 100000 ps;
+	address(0) <= '0';
+	WAIT FOR 100000 ps;
+	address(0) <= '1';
+	WAIT FOR 100000 ps;
+	address(0) <= '0';
+	WAIT FOR 80000 ps;
+	address(0) <= '1';
 WAIT;
 END PROCESS t_prcs_address_0;
-
--- clock
-t_prcs_clock: PROCESS
-BEGIN
-	FOR i IN 1 TO 12
-	LOOP
-		clock <= '0';
-		WAIT FOR 40000 ps;
-		clock <= '1';
-		WAIT FOR 40000 ps;
-	END LOOP;
-	clock <= '0';
-WAIT;
-END PROCESS t_prcs_clock;
-
--- writen
-t_prcs_writen: PROCESS
-BEGIN
-	writen <= '1';
-	WAIT FOR 480000 ps;
-	writen <= '0';
-	WAIT FOR 480000 ps;
-	writen <= '1';
-WAIT;
-END PROCESS t_prcs_writen;
 -- data_in[7]
 t_prcs_data_in_7: PROCESS
 BEGIN
@@ -168,7 +170,7 @@ END PROCESS t_prcs_data_in_7;
 -- data_in[6]
 t_prcs_data_in_6: PROCESS
 BEGIN
-	data_in(6) <= '0';
+	data_in(6) <= '1';
 WAIT;
 END PROCESS t_prcs_data_in_6;
 -- data_in[5]
@@ -181,59 +183,64 @@ END PROCESS t_prcs_data_in_5;
 t_prcs_data_in_4: PROCESS
 BEGIN
 	data_in(4) <= '0';
-	WAIT FOR 640000 ps;
-	data_in(4) <= '1';
 WAIT;
 END PROCESS t_prcs_data_in_4;
 -- data_in[3]
 t_prcs_data_in_3: PROCESS
 BEGIN
 	data_in(3) <= '0';
-	WAIT FOR 320000 ps;
-	data_in(3) <= '1';
-	WAIT FOR 320000 ps;
-	data_in(3) <= '0';
-	WAIT FOR 320000 ps;
+	WAIT FOR 300000 ps;
 	data_in(3) <= '1';
 WAIT;
 END PROCESS t_prcs_data_in_3;
 -- data_in[2]
 t_prcs_data_in_2: PROCESS
 BEGIN
-	FOR i IN 1 TO 3
-	LOOP
-		data_in(2) <= '0';
-		WAIT FOR 160000 ps;
-		data_in(2) <= '1';
-		WAIT FOR 160000 ps;
-	END LOOP;
+	data_in(2) <= '1';
+	WAIT FOR 300000 ps;
 	data_in(2) <= '0';
+	WAIT FOR 400000 ps;
+	data_in(2) <= '1';
 WAIT;
 END PROCESS t_prcs_data_in_2;
 -- data_in[1]
 t_prcs_data_in_1: PROCESS
 BEGIN
-	FOR i IN 1 TO 6
-	LOOP
-		data_in(1) <= '0';
-		WAIT FOR 80000 ps;
-		data_in(1) <= '1';
-		WAIT FOR 80000 ps;
-	END LOOP;
 	data_in(1) <= '0';
+	WAIT FOR 100000 ps;
+	data_in(1) <= '1';
+	WAIT FOR 200000 ps;
+	data_in(1) <= '0';
+	WAIT FOR 200000 ps;
+	data_in(1) <= '1';
+	WAIT FOR 200000 ps;
+	data_in(1) <= '0';
+	WAIT FOR 200000 ps;
+	data_in(1) <= '1';
 WAIT;
 END PROCESS t_prcs_data_in_1;
 -- data_in[0]
 t_prcs_data_in_0: PROCESS
 BEGIN
-	FOR i IN 1 TO 12
-	LOOP
-		data_in(0) <= '0';
-		WAIT FOR 40000 ps;
-		data_in(0) <= '1';
-		WAIT FOR 40000 ps;
-	END LOOP;
+	data_in(0) <= '1';
+	WAIT FOR 100000 ps;
 	data_in(0) <= '0';
+	WAIT FOR 100000 ps;
+	data_in(0) <= '1';
+	WAIT FOR 100000 ps;
+	data_in(0) <= '0';
+	WAIT FOR 100000 ps;
+	data_in(0) <= '1';
+	WAIT FOR 100000 ps;
+	data_in(0) <= '0';
+	WAIT FOR 100000 ps;
+	FOR i IN 1 TO 2
+	LOOP
+		data_in(0) <= '1';
+		WAIT FOR 100000 ps;
+		data_in(0) <= '0';
+		WAIT FOR 100000 ps;
+	END LOOP;
 WAIT;
 END PROCESS t_prcs_data_in_0;
 END rw_96x8_sync_arch;

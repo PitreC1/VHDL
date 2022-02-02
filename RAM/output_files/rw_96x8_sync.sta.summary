@@ -8,14 +8,14 @@ TNS   : -95.873
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
 Slack : -2.636
-TNS   : -95.852
+TNS   : -95.827
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock'
 Slack : -2.636
-TNS   : -95.638
+TNS   : -95.663
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
 Slack : -2.636
-TNS   : -95.689
+TNS   : -95.716
 
 ------------------------------------------------------------

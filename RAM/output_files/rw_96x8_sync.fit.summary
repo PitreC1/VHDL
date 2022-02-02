@@ -1,20 +1,20 @@
-Fitter Status : Successful - Thu Jan 27 15:22:10 2022
+Fitter Status : Successful - Tue Feb 01 22:24:39 2022
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : rw_96x8_sync
 Top-level Entity Name : rw_96x8_sync
 Family : Cyclone V
-Device : 5CSEMA4U23C6
+Device : 5CGXFC7C6U19C6
 Timing Models : Final
-Logic utilization (in ALMs) : 2 / 15,880 ( < 1 % )
+Logic utilization (in ALMs) : 2 / 56,480 ( < 1 % )
 Total registers : 0
-Total pins : 26 / 314 ( 8 % )
+Total pins : 26 / 268 ( 10 % )
 Total virtual pins : 0
-Total block memory bits : 2,048 / 2,764,800 ( < 1 % )
-Total RAM Blocks : 1 / 270 ( < 1 % )
-Total DSP Blocks : 0 / 84 ( 0 % )
-Total HSSI RX PCSs : 0
-Total HSSI PMA RX Deserializers : 0
-Total HSSI TX PCSs : 0
-Total HSSI PMA TX Serializers : 0
-Total PLLs : 0 / 5 ( 0 % )
+Total block memory bits : 2,048 / 7,024,640 ( < 1 % )
+Total RAM Blocks : 1 / 686 ( < 1 % )
+Total DSP Blocks : 0 / 156 ( 0 % )
+Total HSSI RX PCSs : 0 / 6 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 6 ( 0 % )
+Total HSSI TX PCSs : 0 / 6 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 6 ( 0 % )
+Total PLLs : 0 / 13 ( 0 % )
 Total DLLs : 0 / 4 ( 0 % )

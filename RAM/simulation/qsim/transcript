@@ -1,7 +1,7 @@
 # do rw_96x8_sync.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:04:43 on Jan 27,2022
+# Start time: 22:29:22 on Feb 01,2022
 # vcom -work work rw_96x8_sync.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -13,20 +13,20 @@
 # -- Loading package cyclonev_components
 # -- Compiling entity rw_96x8_sync
 # -- Compiling architecture structure of rw_96x8_sync
-# End time: 16:04:43 on Jan 27,2022, Elapsed time: 0:00:00
+# End time: 22:29:22 on Feb 01,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:04:43 on Jan 27,2022
+# Start time: 22:29:22 on Feb 01,2022
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity rw_96x8_sync_vhd_vec_tst
 # -- Compiling architecture rw_96x8_sync_arch of rw_96x8_sync_vhd_vec_tst
-# End time: 16:04:43 on Jan 27,2022, Elapsed time: 0:00:00
+# End time: 22:29:22 on Feb 01,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.rw_96x8_sync_vhd_vec_tst 
-# Start time: 16:04:43 on Jan 27,2022
+# Start time: 22:29:24 on Feb 01,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -50,5 +50,5 @@
 # Loading altera_lnsim.common_28nm_ram_register
 # Loading altera_lnsim.common_28nm_ram_pulse_generator
 # after#32
-# End time: 16:04:44 on Jan 27,2022, Elapsed time: 0:00:01
+# End time: 22:29:25 on Feb 01,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
