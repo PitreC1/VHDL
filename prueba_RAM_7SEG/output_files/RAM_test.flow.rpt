@@ -1,5 +1,5 @@
 Flow report for RAM_test
-Thu Feb 03 11:21:52 2022
+Thu Feb 03 18:54:34 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Feb 03 11:21:52 2022       ;
+; Flow Status                     ; Successful - Thu Feb 03 18:54:34 2022       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; RAM_test                                    ;
 ; Top-level Entity Name           ; RAM_test                                    ;
@@ -101,7 +101,9 @@ refer to the applicable agreement for further details.
 ; Assembler            ; 00:00:10     ; 1.0                     ; 4827 MB             ; 00:00:09                           ;
 ; Timing Analyzer      ; 00:00:07     ; 1.0                     ; 5149 MB             ; 00:00:07                           ;
 ; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4729 MB             ; 00:00:02                           ;
-; Total                ; 00:01:19     ; --                      ; --                  ; 00:02:07                           ;
+; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4706 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4715 MB             ; 00:00:03                           ;
+; Total                ; 00:01:27     ; --                      ; --                  ; 00:02:12                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -115,6 +117,8 @@ refer to the applicable agreement for further details.
 ; Assembler            ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -126,6 +130,8 @@ quartus_fit --read_settings_files=off --write_settings_files=off RAM_test -c RAM
 quartus_asm --read_settings_files=off --write_settings_files=off RAM_test -c RAM_test
 quartus_sta RAM_test -c RAM_test
 quartus_eda --read_settings_files=off --write_settings_files=off RAM_test -c RAM_test
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off RAM_test -c RAM_test --vector_source="C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_RAM_7SEG/Waveform.vwf" --testbench_file="C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_RAM_7SEG/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/prueba_RAM_7SEG/simulation/qsim/" RAM_test -c RAM_test
 
 
 

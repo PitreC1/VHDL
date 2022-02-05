@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
 
--- DATE "02/03/2022 11:18:04"
+-- DATE "02/03/2022 18:54:34"
 
 -- 
 -- Device: Altera 5CGXFC7C6U19C6 Package UFBGA484
@@ -39,8 +39,8 @@ ENTITY 	RAM_test IS
 	writen : IN std_logic;
 	address : IN std_logic_vector(7 DOWNTO 0);
 	data_in : IN std_logic_vector(7 DOWNTO 0);
-	hex0 : OUT std_logic_vector(0 TO 7);
-	hex1 : OUT std_logic_vector(0 TO 7)
+	hex0 : BUFFER std_logic_vector(0 TO 7);
+	hex1 : BUFFER std_logic_vector(0 TO 7)
 	);
 END RAM_test;
 
@@ -66,19 +66,19 @@ END RAM_test;
 -- address[5]	=>  Location: PIN_L8,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- address[6]	=>  Location: PIN_W8,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- clock	=>  Location: PIN_K17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- data_in[4]	=>  Location: PIN_T9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- data_in[0]	=>  Location: PIN_T9,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- address[0]	=>  Location: PIN_T8,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- address[1]	=>  Location: PIN_P6,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- address[2]	=>  Location: PIN_P7,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- address[3]	=>  Location: PIN_U6,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- address[4]	=>  Location: PIN_P8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- data_in[5]	=>  Location: PIN_U7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- data_in[6]	=>  Location: PIN_T7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- data_in[7]	=>  Location: PIN_N6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- data_in[0]	=>  Location: PIN_M6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- data_in[1]	=>  Location: PIN_R5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- data_in[2]	=>  Location: PIN_R7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- data_in[3]	=>  Location: PIN_M7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- data_in[1]	=>  Location: PIN_U7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- data_in[2]	=>  Location: PIN_T7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- data_in[3]	=>  Location: PIN_N6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- data_in[4]	=>  Location: PIN_M6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- data_in[5]	=>  Location: PIN_R5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- data_in[6]	=>  Location: PIN_R7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- data_in[7]	=>  Location: PIN_M7,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF RAM_test IS
@@ -123,21 +123,10 @@ SIGNAL \data_in[4]~input_o\ : std_logic;
 SIGNAL \data_in[5]~input_o\ : std_logic;
 SIGNAL \data_in[6]~input_o\ : std_logic;
 SIGNAL \data_in[7]~input_o\ : std_logic;
-SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a7\ : std_logic;
-SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a6\ : std_logic;
-SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a4\ : std_logic;
-SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a5\ : std_logic;
-SIGNAL \S1|Mux6~0_combout\ : std_logic;
-SIGNAL \S1|Mux5~0_combout\ : std_logic;
-SIGNAL \S1|Mux4~0_combout\ : std_logic;
-SIGNAL \S1|Mux3~0_combout\ : std_logic;
-SIGNAL \S1|Mux2~0_combout\ : std_logic;
-SIGNAL \S1|Mux1~0_combout\ : std_logic;
-SIGNAL \S1|Mux0~0_combout\ : std_logic;
-SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a2\ : std_logic;
 SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a1\ : std_logic;
-SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ : std_logic;
+SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a2\ : std_logic;
 SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a3\ : std_logic;
+SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ : std_logic;
 SIGNAL \S0|Mux6~0_combout\ : std_logic;
 SIGNAL \S0|Mux5~0_combout\ : std_logic;
 SIGNAL \S0|Mux4~0_combout\ : std_logic;
@@ -145,12 +134,23 @@ SIGNAL \S0|Mux3~0_combout\ : std_logic;
 SIGNAL \S0|Mux2~0_combout\ : std_logic;
 SIGNAL \S0|Mux1~0_combout\ : std_logic;
 SIGNAL \S0|Mux0~0_combout\ : std_logic;
+SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a5\ : std_logic;
+SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a4\ : std_logic;
+SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a6\ : std_logic;
+SIGNAL \ram|RW_rtl_0|auto_generated|ram_block1a7\ : std_logic;
+SIGNAL \S1|Mux6~0_combout\ : std_logic;
+SIGNAL \S1|Mux5~0_combout\ : std_logic;
+SIGNAL \S1|Mux4~0_combout\ : std_logic;
+SIGNAL \S1|Mux3~0_combout\ : std_logic;
+SIGNAL \S1|Mux2~0_combout\ : std_logic;
+SIGNAL \S1|Mux1~0_combout\ : std_logic;
+SIGNAL \S1|Mux0~0_combout\ : std_logic;
 SIGNAL \ALT_INV_address[6]~input_o\ : std_logic;
 SIGNAL \ALT_INV_address[5]~input_o\ : std_logic;
 SIGNAL \ALT_INV_address[7]~input_o\ : std_logic;
 SIGNAL \ALT_INV_writen~input_o\ : std_logic;
-SIGNAL \S0|ALT_INV_Mux6~0_combout\ : std_logic;
 SIGNAL \S1|ALT_INV_Mux6~0_combout\ : std_logic;
+SIGNAL \S0|ALT_INV_Mux6~0_combout\ : std_logic;
 SIGNAL \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\ : std_logic;
 SIGNAL \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\ : std_logic;
 SIGNAL \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\ : std_logic;
@@ -191,8 +191,8 @@ ww_devpor <= devpor;
 \ALT_INV_address[5]~input_o\ <= NOT \address[5]~input_o\;
 \ALT_INV_address[7]~input_o\ <= NOT \address[7]~input_o\;
 \ALT_INV_writen~input_o\ <= NOT \writen~input_o\;
-\S0|ALT_INV_Mux6~0_combout\ <= NOT \S0|Mux6~0_combout\;
 \S1|ALT_INV_Mux6~0_combout\ <= NOT \S1|Mux6~0_combout\;
+\S0|ALT_INV_Mux6~0_combout\ <= NOT \S0|Mux6~0_combout\;
 \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\ <= NOT \ram|RW_rtl_0|auto_generated|ram_block1a1\;
 \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\ <= NOT \ram|RW_rtl_0|auto_generated|ram_block1a2\;
 \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\ <= NOT \ram|RW_rtl_0|auto_generated|ram_block1a3\;
@@ -224,7 +224,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S1|ALT_INV_Mux6~0_combout\,
+	i => \S0|ALT_INV_Mux6~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex0(6));
 
@@ -237,7 +237,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S1|Mux5~0_combout\,
+	i => \S0|Mux5~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex0(5));
 
@@ -250,7 +250,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S1|Mux4~0_combout\,
+	i => \S0|Mux4~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex0(4));
 
@@ -263,7 +263,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S1|Mux3~0_combout\,
+	i => \S0|Mux3~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex0(3));
 
@@ -276,7 +276,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S1|Mux2~0_combout\,
+	i => \S0|Mux2~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex0(2));
 
@@ -289,7 +289,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S1|Mux1~0_combout\,
+	i => \S0|Mux1~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex0(1));
 
@@ -302,7 +302,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S1|Mux0~0_combout\,
+	i => \S0|Mux0~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex0(0));
 
@@ -328,7 +328,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S0|ALT_INV_Mux6~0_combout\,
+	i => \S1|ALT_INV_Mux6~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex1(6));
 
@@ -341,7 +341,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S0|Mux5~0_combout\,
+	i => \S1|Mux5~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex1(5));
 
@@ -354,7 +354,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S0|Mux4~0_combout\,
+	i => \S1|Mux4~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex1(4));
 
@@ -367,7 +367,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S0|Mux3~0_combout\,
+	i => \S1|Mux3~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex1(3));
 
@@ -380,7 +380,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S0|Mux2~0_combout\,
+	i => \S1|Mux2~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex1(2));
 
@@ -393,7 +393,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S0|Mux1~0_combout\,
+	i => \S1|Mux1~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex1(1));
 
@@ -406,7 +406,7 @@ GENERIC MAP (
 	shift_series_termination_control => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \S0|Mux0~0_combout\,
+	i => \S1|Mux0~0_combout\,
 	devoe => ww_devoe,
 	o => ww_hex1(0));
 
@@ -515,7 +515,7 @@ PORT MAP (
 	inclk => \clock~input_o\,
 	outclk => \clock~inputCLKENA0_outclk\);
 
--- Location: IOIBUF_X4_Y0_N18
+-- Location: IOIBUF_X8_Y0_N1
 \data_in[0]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -581,7 +581,7 @@ PORT MAP (
 	i => ww_address(4),
 	o => \address[4]~input_o\);
 
--- Location: IOIBUF_X4_Y0_N52
+-- Location: IOIBUF_X2_Y0_N92
 \data_in[1]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -592,7 +592,7 @@ PORT MAP (
 	i => ww_data_in(1),
 	o => \data_in[1]~input_o\);
 
--- Location: IOIBUF_X6_Y0_N18
+-- Location: IOIBUF_X6_Y0_N1
 \data_in[2]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -603,7 +603,7 @@ PORT MAP (
 	i => ww_data_in(2),
 	o => \data_in[2]~input_o\);
 
--- Location: IOIBUF_X4_Y0_N1
+-- Location: IOIBUF_X2_Y0_N41
 \data_in[3]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -614,7 +614,7 @@ PORT MAP (
 	i => ww_data_in(3),
 	o => \data_in[3]~input_o\);
 
--- Location: IOIBUF_X8_Y0_N1
+-- Location: IOIBUF_X4_Y0_N18
 \data_in[4]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -625,7 +625,7 @@ PORT MAP (
 	i => ww_data_in(4),
 	o => \data_in[4]~input_o\);
 
--- Location: IOIBUF_X2_Y0_N92
+-- Location: IOIBUF_X4_Y0_N52
 \data_in[5]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -636,7 +636,7 @@ PORT MAP (
 	i => ww_data_in(5),
 	o => \data_in[5]~input_o\);
 
--- Location: IOIBUF_X6_Y0_N1
+-- Location: IOIBUF_X6_Y0_N18
 \data_in[6]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -647,7 +647,7 @@ PORT MAP (
 	i => ww_data_in(6),
 	o => \data_in[6]~input_o\);
 
--- Location: IOIBUF_X2_Y0_N41
+-- Location: IOIBUF_X4_Y0_N1
 \data_in[7]~input\ : cyclonev_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -706,244 +706,108 @@ PORT MAP (
 	portbdataout => \ram|RW_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus\);
 
 -- Location: MLABCELL_X15_Y1_N3
-\S1|Mux6~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \S1|Mux6~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( ((!\ram|RW_rtl_0|auto_generated|ram_block1a6\) # (!\ram|RW_rtl_0|auto_generated|ram_block1a4\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a7\) ) ) # ( 
--- !\ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a7\ & (\ram|RW_rtl_0|auto_generated|ram_block1a6\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a7\ & ((!\ram|RW_rtl_0|auto_generated|ram_block1a6\) # 
--- (\ram|RW_rtl_0|auto_generated|ram_block1a4\))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101101001011111111111111111010101011010010111111111111111110101",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
-	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
-	datae => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
-	combout => \S1|Mux6~0_combout\);
-
--- Location: MLABCELL_X25_Y1_N33
-\S1|Mux5~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \S1|Mux5~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( \ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a7\ ) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( 
--- \ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a6\ $ (\ram|RW_rtl_0|auto_generated|ram_block1a7\) ) ) ) # ( \ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( 
--- (!\ram|RW_rtl_0|auto_generated|ram_block1a6\ & !\ram|RW_rtl_0|auto_generated|ram_block1a7\) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000000000000000101000001010000010100101101001011111000011110000",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
-	datae => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
-	combout => \S1|Mux5~0_combout\);
-
--- Location: MLABCELL_X25_Y1_N6
-\S1|Mux4~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \S1|Mux4~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( \ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a7\ ) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( 
--- \ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a7\) # (!\ram|RW_rtl_0|auto_generated|ram_block1a6\) ) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( 
--- (!\ram|RW_rtl_0|auto_generated|ram_block1a7\ & \ram|RW_rtl_0|auto_generated|ram_block1a6\) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000110000001100000000000000000011111100111111001100110011001100",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
-	datae => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
-	combout => \S1|Mux4~0_combout\);
-
--- Location: MLABCELL_X25_Y1_N15
-\S1|Mux3~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \S1|Mux3~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a6\ $ (\ram|RW_rtl_0|auto_generated|ram_block1a5\) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( 
--- (!\ram|RW_rtl_0|auto_generated|ram_block1a6\ & (\ram|RW_rtl_0|auto_generated|ram_block1a7\ & \ram|RW_rtl_0|auto_generated|ram_block1a5\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a6\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a7\ & 
--- !\ram|RW_rtl_0|auto_generated|ram_block1a5\)) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0101000000001010010100000000101010101010010101011010101001010101",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
-	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
-	combout => \S1|Mux3~0_combout\);
-
--- Location: MLABCELL_X25_Y1_N21
-\S1|Mux2~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \S1|Mux2~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( \ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a6\ & \ram|RW_rtl_0|auto_generated|ram_block1a7\) ) ) ) # ( 
--- \ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a6\ $ (\ram|RW_rtl_0|auto_generated|ram_block1a7\) ) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a5\ & ( 
--- !\ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a6\ & \ram|RW_rtl_0|auto_generated|ram_block1a7\) ) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000010100000101101001011010010100000000000000000000010100000101",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
-	datae => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
-	combout => \S1|Mux2~0_combout\);
-
--- Location: MLABCELL_X25_Y1_N24
-\S1|Mux1~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \S1|Mux1~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a7\ & (\ram|RW_rtl_0|auto_generated|ram_block1a6\ & !\ram|RW_rtl_0|auto_generated|ram_block1a5\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a7\ 
--- & ((\ram|RW_rtl_0|auto_generated|ram_block1a5\))) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a6\ & ((\ram|RW_rtl_0|auto_generated|ram_block1a5\) # (\ram|RW_rtl_0|auto_generated|ram_block1a7\))) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0000001100001111000000110000111100001100001100110000110000110011",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
-	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
-	combout => \S1|Mux1~0_combout\);
-
--- Location: MLABCELL_X25_Y1_N27
-\S1|Mux0~0\ : cyclonev_lcell_comb
--- Equation(s):
--- \S1|Mux0~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a6\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a7\ $ (\ram|RW_rtl_0|auto_generated|ram_block1a5\))) # 
--- (\ram|RW_rtl_0|auto_generated|ram_block1a6\ & (\ram|RW_rtl_0|auto_generated|ram_block1a7\ & !\ram|RW_rtl_0|auto_generated|ram_block1a5\)) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a4\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a6\ & 
--- (!\ram|RW_rtl_0|auto_generated|ram_block1a7\ & !\ram|RW_rtl_0|auto_generated|ram_block1a5\)) ) )
-
--- pragma translate_off
-GENERIC MAP (
-	extended_lut => "off",
-	lut_mask => "0100010000000000010001000000000010011001001000101001100100100010",
-	shared_arith => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
-	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
-	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
-	combout => \S1|Mux0~0_combout\);
-
--- Location: MLABCELL_X25_Y1_N0
 \S0|Mux6~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \S0|Mux6~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a2\) # ((\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\) # (\ram|RW_rtl_0|auto_generated|ram_block1a1\)) ) ) # ( 
--- !\ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a2\ & (\ram|RW_rtl_0|auto_generated|ram_block1a1\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a2\ & ((!\ram|RW_rtl_0|auto_generated|ram_block1a1\) # 
--- (!\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\))) ) )
+-- \S0|Mux6~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( 
+-- !\ram|RW_rtl_0|auto_generated|ram_block1a1\ $ (!\ram|RW_rtl_0|auto_generated|ram_block1a2\) ) ) ) # ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a2\) 
+-- # (\ram|RW_rtl_0|auto_generated|ram_block1a1\) ) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a2\) # 
+-- (\ram|RW_rtl_0|auto_generated|ram_block1a1\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0111011001110110011101100111011010111111101111111011111110111111",
+	lut_mask => "0101111101011111111101011111010101011010010110101111111111111111",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
-	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
+	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\,
+	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
+	datae => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
 	combout => \S0|Mux6~0_combout\);
 
--- Location: MLABCELL_X25_Y1_N3
+-- Location: MLABCELL_X25_Y1_N33
 \S0|Mux5~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \S0|Mux5~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a2\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ & \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\)) ) ) # ( 
--- !\ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a2\ & ((\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\) # (\ram|RW_rtl_0|auto_generated|ram_block1a1\))) # (\ram|RW_rtl_0|auto_generated|ram_block1a2\ & 
--- (\ram|RW_rtl_0|auto_generated|ram_block1a1\ & \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\)) ) )
+-- \S0|Mux5~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a2\ & ( \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a1\ $ (!\ram|RW_rtl_0|auto_generated|ram_block1a3\) ) ) ) # ( 
+-- !\ram|RW_rtl_0|auto_generated|ram_block1a2\ & ( \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a3\ ) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a2\ & ( 
+-- !\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a1\ & !\ram|RW_rtl_0|auto_generated|ram_block1a3\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0010101100101011001010110010101100000100000001000000010000000100",
+	lut_mask => "0011000000110000000000000000000011110000111100000011110000111100",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
 	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
+	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
+	datae => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
 	combout => \S0|Mux5~0_combout\);
 
--- Location: MLABCELL_X25_Y1_N36
+-- Location: MLABCELL_X25_Y1_N6
 \S0|Mux4~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \S0|Mux4~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a2\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ & \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\)) ) ) # ( 
--- !\ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( ((\ram|RW_rtl_0|auto_generated|ram_block1a2\ & !\ram|RW_rtl_0|auto_generated|ram_block1a1\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\) ) )
+-- \S0|Mux4~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a2\ & ( \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a3\ ) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a2\ & ( 
+-- \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a3\) # (!\ram|RW_rtl_0|auto_generated|ram_block1a1\) ) ) ) # ( \ram|RW_rtl_0|auto_generated|ram_block1a2\ & ( 
+-- !\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a3\ & !\ram|RW_rtl_0|auto_generated|ram_block1a1\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0100111101001111010011110100111100001000000010000000100000001000",
+	lut_mask => "0000000000000000110011000000000011111111110011001100110011001100",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
-	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
+	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
+	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\,
+	datae => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
 	combout => \S0|Mux4~0_combout\);
 
--- Location: MLABCELL_X25_Y1_N39
+-- Location: MLABCELL_X25_Y1_N15
 \S0|Mux3~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \S0|Mux3~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a2\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ $ (!\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\))) # 
--- (\ram|RW_rtl_0|auto_generated|ram_block1a2\ & (\ram|RW_rtl_0|auto_generated|ram_block1a1\ & \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\)) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a2\ & 
--- (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ & \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a2\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ $ 
--- (\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\))) ) )
+-- \S0|Mux3~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & (\ram|RW_rtl_0|auto_generated|ram_block1a1\ & !\ram|RW_rtl_0|auto_generated|ram_block1a2\)) # 
+-- (\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ $ (\ram|RW_rtl_0|auto_generated|ram_block1a2\))) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( 
+-- (!\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ & \ram|RW_rtl_0|auto_generated|ram_block1a2\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & 
+-- (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ $ (\ram|RW_rtl_0|auto_generated|ram_block1a2\))) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0101000010100101010100001010010100001010101001010000101010100101",
+	lut_mask => "0101000010100101010100001010010101011010000001010101101000000101",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
+	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
 	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\,
-	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
+	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
 	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
 	combout => \S0|Mux3~0_combout\);
 
--- Location: MLABCELL_X25_Y1_N42
+-- Location: MLABCELL_X25_Y1_N21
 \S0|Mux2~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \S0|Mux2~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a2\ & ((!\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\) # (\ram|RW_rtl_0|auto_generated|ram_block1a1\))) ) ) # ( 
--- !\ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a2\ & (\ram|RW_rtl_0|auto_generated|ram_block1a1\ & !\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\)) ) )
+-- \S0|Mux2~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a2\ & ( \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a1\ & \ram|RW_rtl_0|auto_generated|ram_block1a3\) ) ) ) # ( 
+-- \ram|RW_rtl_0|auto_generated|ram_block1a2\ & ( !\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ ) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a2\ & ( 
+-- !\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a1\ & !\ram|RW_rtl_0|auto_generated|ram_block1a3\) ) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0010000000100000001000000010000001010001010100010101000101010001",
+	lut_mask => "0011000000110000000011110000111100000000000000000000001100000011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
 	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
+	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
+	datae => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
 	combout => \S0|Mux2~0_combout\);
 
--- Location: MLABCELL_X25_Y1_N45
+-- Location: MLABCELL_X25_Y1_N24
 \S0|Mux1~0\ : cyclonev_lcell_comb
 -- Equation(s):
 -- \S0|Mux1~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & (\ram|RW_rtl_0|auto_generated|ram_block1a2\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & 
@@ -953,34 +817,171 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000010101010000000001010101000001010101000011110101010100001111",
+	lut_mask => "0001010000010100000101000001010001010011010100110101001101010011",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
 	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\,
-	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
+	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\,
+	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
 	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
 	combout => \S0|Mux1~0_combout\);
 
--- Location: MLABCELL_X25_Y1_N48
+-- Location: MLABCELL_X25_Y1_N27
 \S0|Mux0~0\ : cyclonev_lcell_comb
 -- Equation(s):
--- \S0|Mux0~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ $ (!\ram|RW_rtl_0|auto_generated|ram_block1a2\))) ) ) # ( 
--- !\ram|RW_rtl_0|auto_generated|ram_block1a3\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a2\ $ (!\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\))) ) )
+-- \S0|Mux0~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a2\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ $ (\ram|RW_rtl_0|auto_generated|ram_block1a3\))) # 
+-- (\ram|RW_rtl_0|auto_generated|ram_block1a2\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ & \ram|RW_rtl_0|auto_generated|ram_block1a3\)) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a0~portbdataout\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a2\ & 
+-- (!\ram|RW_rtl_0|auto_generated|ram_block1a1\ & !\ram|RW_rtl_0|auto_generated|ram_block1a3\)) ) )
 
 -- pragma translate_off
 GENERIC MAP (
 	extended_lut => "off",
-	lut_mask => "0000110011000000000011001100000000000000001111000000000000111100",
+	lut_mask => "0100000001000000010000000100000010000110100001101000011010000110",
 	shared_arith => "off")
 -- pragma translate_on
 PORT MAP (
+	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
 	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a1\,
-	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a2\,
-	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
-	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
+	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a3\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a0~portbdataout\,
 	combout => \S0|Mux0~0_combout\);
+
+-- Location: MLABCELL_X25_Y1_N0
+\S1|Mux6~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \S1|Mux6~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( ((!\ram|RW_rtl_0|auto_generated|ram_block1a6\) # (\ram|RW_rtl_0|auto_generated|ram_block1a4\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a5\) ) ) # ( 
+-- !\ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a5\ & ((\ram|RW_rtl_0|auto_generated|ram_block1a6\))) # (\ram|RW_rtl_0|auto_generated|ram_block1a5\ & ((!\ram|RW_rtl_0|auto_generated|ram_block1a4\) # 
+-- (!\ram|RW_rtl_0|auto_generated|ram_block1a6\))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101111001011110010111100101111011110111111101111111011111110111",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
+	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
+	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
+	combout => \S1|Mux6~0_combout\);
+
+-- Location: MLABCELL_X25_Y1_N3
+\S1|Mux5~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \S1|Mux5~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a5\ & (\ram|RW_rtl_0|auto_generated|ram_block1a4\ & \ram|RW_rtl_0|auto_generated|ram_block1a6\)) ) ) # ( 
+-- !\ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a5\ & (\ram|RW_rtl_0|auto_generated|ram_block1a4\ & !\ram|RW_rtl_0|auto_generated|ram_block1a6\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a5\ & 
+-- ((!\ram|RW_rtl_0|auto_generated|ram_block1a6\) # (\ram|RW_rtl_0|auto_generated|ram_block1a4\))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0101111100000101010111110000010100000000000010100000000000001010",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
+	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
+	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
+	combout => \S1|Mux5~0_combout\);
+
+-- Location: MLABCELL_X25_Y1_N36
+\S1|Mux4~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \S1|Mux4~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a5\ & (\ram|RW_rtl_0|auto_generated|ram_block1a4\ & !\ram|RW_rtl_0|auto_generated|ram_block1a6\)) ) ) # ( 
+-- !\ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( ((!\ram|RW_rtl_0|auto_generated|ram_block1a5\ & \ram|RW_rtl_0|auto_generated|ram_block1a6\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a4\) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0011101100111011001110110011101100100000001000000010000000100000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
+	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
+	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
+	combout => \S1|Mux4~0_combout\);
+
+-- Location: MLABCELL_X25_Y1_N39
+\S1|Mux3~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \S1|Mux3~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a5\ & (\ram|RW_rtl_0|auto_generated|ram_block1a4\ & !\ram|RW_rtl_0|auto_generated|ram_block1a6\)) # (\ram|RW_rtl_0|auto_generated|ram_block1a5\ 
+-- & (!\ram|RW_rtl_0|auto_generated|ram_block1a4\ $ (\ram|RW_rtl_0|auto_generated|ram_block1a6\))) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a5\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a4\ $ 
+-- (!\ram|RW_rtl_0|auto_generated|ram_block1a6\))) # (\ram|RW_rtl_0|auto_generated|ram_block1a5\ & (\ram|RW_rtl_0|auto_generated|ram_block1a4\ & \ram|RW_rtl_0|auto_generated|ram_block1a6\)) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0010001010011001001000101001100101100110000100010110011000010001",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
+	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
+	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
+	combout => \S1|Mux3~0_combout\);
+
+-- Location: MLABCELL_X25_Y1_N42
+\S1|Mux2~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \S1|Mux2~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a6\ & ((!\ram|RW_rtl_0|auto_generated|ram_block1a4\) # (\ram|RW_rtl_0|auto_generated|ram_block1a5\))) ) ) # ( 
+-- !\ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a5\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a4\ & !\ram|RW_rtl_0|auto_generated|ram_block1a6\)) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0100000001000000010000000100000000001101000011010000110100001101",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
+	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
+	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
+	combout => \S1|Mux2~0_combout\);
+
+-- Location: MLABCELL_X25_Y1_N45
+\S1|Mux1~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \S1|Mux1~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a4\ & ((\ram|RW_rtl_0|auto_generated|ram_block1a6\))) # (\ram|RW_rtl_0|auto_generated|ram_block1a4\ & 
+-- (\ram|RW_rtl_0|auto_generated|ram_block1a5\)) ) ) # ( !\ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a6\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a5\ $ (!\ram|RW_rtl_0|auto_generated|ram_block1a4\))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0000000001100110000000000110011000010001110111010001000111011101",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
+	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
+	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
+	combout => \S1|Mux1~0_combout\);
+
+-- Location: MLABCELL_X25_Y1_N48
+\S1|Mux0~0\ : cyclonev_lcell_comb
+-- Equation(s):
+-- \S1|Mux0~0_combout\ = ( \ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (\ram|RW_rtl_0|auto_generated|ram_block1a4\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a5\ $ (!\ram|RW_rtl_0|auto_generated|ram_block1a6\))) ) ) # ( 
+-- !\ram|RW_rtl_0|auto_generated|ram_block1a7\ & ( (!\ram|RW_rtl_0|auto_generated|ram_block1a5\ & (!\ram|RW_rtl_0|auto_generated|ram_block1a4\ $ (!\ram|RW_rtl_0|auto_generated|ram_block1a6\))) ) )
+
+-- pragma translate_off
+GENERIC MAP (
+	extended_lut => "off",
+	lut_mask => "0011000011000000001100001100000000000011001100000000001100110000",
+	shared_arith => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a4\,
+	datac => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a5\,
+	datad => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a6\,
+	dataf => \ram|RW_rtl_0|auto_generated|ALT_INV_ram_block1a7\,
+	combout => \S1|Mux0~0_combout\);
 
 -- Location: LABCELL_X70_Y31_N0
 \~QUARTUS_CREATED_GND~I\ : cyclonev_lcell_comb

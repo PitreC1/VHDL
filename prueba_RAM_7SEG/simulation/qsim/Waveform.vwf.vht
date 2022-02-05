@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "02/03/2022 11:18:02"
+-- Generated on "02/03/2022 18:54:30"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          RAM_test
 -- 
@@ -44,8 +44,8 @@ COMPONENT RAM_test
 	address : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 	clock : IN STD_LOGIC;
 	data_in : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-	hex0 : OUT STD_LOGIC_VECTOR(0 TO 7);
-	hex1 : OUT STD_LOGIC_VECTOR(0 TO 7);
+	hex0 : BUFFER STD_LOGIC_VECTOR(0 TO 7);
+	hex1 : BUFFER STD_LOGIC_VECTOR(0 TO 7);
 	writen : IN STD_LOGIC
 	);
 END COMPONENT;
