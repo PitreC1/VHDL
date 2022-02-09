@@ -3,7 +3,7 @@ $comment
 		vcd file rw_96x8_sync.msim.vcd -direction
 $end
 $date
-	Tue Feb 01 22:29:24 2022
+	Wed Feb 09 12:00:37 2022
 $end
 $version
 	ModelSim Version 10.5b

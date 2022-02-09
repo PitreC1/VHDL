@@ -25,7 +25,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Jan 27 14:17:41 2022
+    Info: Processing started: Sun Feb 06 22:55:56 2022
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off alu -c alu --vector_source="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/Waveform.vwf" --testbench_file="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim/Waveform.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -51,14 +51,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Thu Jan 27 14:17:45 2022
+    Info: Processing started: Sun Feb 06 22:56:03 2022
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim/" alu -c alu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file alu.vho in folder "E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/Primer Parcial/ALU/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4707 megabytes
-    Info: Processing ended: Thu Jan 27 14:17:48 2022
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Sun Feb 06 22:56:05 2022
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 Completed successfully. 
@@ -75,7 +75,6 @@ c:/intelfpga_lite/18.0/modelsim_ase/win32aloem//vsim -c -do alu.do
 
 Reading C:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
 
-
 # 10.5b
 
 
@@ -84,7 +83,7 @@ Reading C:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:17:52 on Jan 27,2022
+# Start time: 22:56:09 on Feb 06,2022
 # vcom -work work alu.vho 
 
 # -- Loading package STANDARD
@@ -92,30 +91,29 @@ Reading C:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package altera_lnsim_components
-
 # -- Loading package VITAL_Timing
+
 # -- Loading package VITAL_Primitives
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
 # -- Compiling entity alu
 # -- Compiling architecture structure of alu
-
-# End time: 14:17:53 on Jan 27,2022, Elapsed time: 0:00:01
+# End time: 22:56:09 on Feb 06,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 14:17:53 on Jan 27,2022
+# Start time: 22:56:09 on Feb 06,2022
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity alu_vhd_vec_tst
 # -- Compiling architecture alu_arch of alu_vhd_vec_tst
-# End time: 14:17:53 on Jan 27,2022, Elapsed time: 0:00:00
+# End time: 22:56:09 on Feb 06,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.alu_vhd_vec_tst 
-# Start time: 14:17:54 on Jan 27,2022
+# Start time: 22:56:10 on Feb 06,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -132,10 +130,9 @@ Reading C:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
 # ** Warning: Design size of 14373 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
-
 # after#32
 
-# End time: 14:17:55 on Jan 27,2022, Elapsed time: 0:00:01
+# End time: 22:56:11 on Feb 06,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 
 Completed successfully. 
@@ -148,7 +145,7 @@ Reading C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/simulation/
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/simulation/qsim/alu_20220127141755.sim.vwf
+Writing the resulting VWF to C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ALU/simulation/qsim/alu_20220206225611.sim.vwf
 
 Finished VCD to VWF conversion.
 

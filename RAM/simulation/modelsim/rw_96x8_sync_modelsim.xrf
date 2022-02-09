@@ -1,6 +1,6 @@
 vendor_name = ModelSim
 source_file = 1, C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/RAM/rw_96x8_sync.vhd
-source_file = 1, Waveform.vwf
+source_file = 1, C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/RAM/Waveform.vwf
 source_file = 1, c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/timing_b.vhd

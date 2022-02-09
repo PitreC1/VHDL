@@ -1,5 +1,5 @@
 Flow report for rom_128x8_sync
-Thu Jan 27 14:40:20 2022
+Wed Feb 09 12:03:52 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Jan 27 14:40:20 2022       ;
+; Flow Status                     ; Successful - Wed Feb 09 12:03:52 2022       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; rom_128x8_sync                              ;
 ; Top-level Entity Name           ; rom_128x8_sync                              ;
@@ -104,7 +104,9 @@ refer to the applicable agreement for further details.
 ; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4699 MB             ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4697 MB             ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4707 MB             ; 00:00:02                           ;
-; Total                ; 00:01:16     ; --                      ; --                  ; 00:01:45                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4698 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4707 MB             ; 00:00:01                           ;
+; Total                ; 00:01:19     ; --                      ; --                  ; 00:01:47                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -121,6 +123,8 @@ refer to the applicable agreement for further details.
 ; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-8JV1A3E  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -133,6 +137,8 @@ quartus_asm --read_settings_files=off --write_settings_files=off rom_128x8_sync 
 quartus_sta rom_128x8_sync -c rom_128x8_sync
 quartus_eda --read_settings_files=off --write_settings_files=off rom_128x8_sync -c rom_128x8_sync
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off rom_128x8_sync -c rom_128x8_sync --vector_source="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/EjercicioROM9dic/Waveform.vwf" --testbench_file="E:/UNICAUCA/VI Semestre/Digitales 2/Quartus_Proyects/EjercicioROM9dic/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off rom_128x8_sync -c rom_128x8_sync --vector_source="C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ROM/Waveform.vwf" --testbench_file="C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ROM/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ROM/simulation/qsim/" rom_128x8_sync -c rom_128x8_sync
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off rom_128x8_sync -c rom_128x8_sync --vector_source="C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ROM/Waveform.vwf" --testbench_file="C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ROM/simulation/qsim/Waveform.vwf.vht"
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Carlos Pitre/OneDrive/Documentos/Primer Parcial/ROM/simulation/qsim/" rom_128x8_sync -c rom_128x8_sync
 

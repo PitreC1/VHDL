@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rw_96x8_sync
-Tue Feb 01 22:23:27 2022
+Wed Feb 09 11:59:06 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -47,7 +47,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Feb 01 22:23:27 2022       ;
+; Analysis & Synthesis Status     ; Successful - Wed Feb 09 11:59:06 2022       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; rw_96x8_sync                                ;
 ; Top-level Entity Name           ; rw_96x8_sync                                ;
@@ -381,7 +381,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -391,7 +391,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Tue Feb 01 22:22:57 2022
+    Info: Processing started: Wed Feb 09 11:58:47 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rw_96x8_sync -c rw_96x8_sync
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -447,8 +447,8 @@ Info (21057): Implemented 36 device resources after synthesis - the final resour
     Info (21064): Implemented 8 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4855 megabytes
-    Info: Processing ended: Tue Feb 01 22:23:27 2022
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:00:55
+    Info: Processing ended: Wed Feb 09 11:59:06 2022
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:39
 
 

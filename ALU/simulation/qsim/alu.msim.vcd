@@ -3,7 +3,7 @@ $comment
 		vcd file alu.msim.vcd -direction
 $end
 $date
-	Thu Jan 27 14:17:55 2022
+	Sun Feb 06 22:56:11 2022
 $end
 $version
 	ModelSim Version 10.5b

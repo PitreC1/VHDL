@@ -5,6 +5,7 @@ entity RAM_test is
 	port( clock, writen : in std_logic;
 			address, data_in : in std_logic_vector(7 downto 0);
 			hex0, hex1: out std_logic_vector(0 to 7));
+			
 end entity;
 
 architecture RAM_test_arch of RAM_test is

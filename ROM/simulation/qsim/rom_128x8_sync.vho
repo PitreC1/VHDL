@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
 
--- DATE "01/27/2022 14:40:20"
+-- DATE "02/09/2022 12:03:52"
 
 -- 
 -- Device: Altera 5CSEMA4U23C6 Package UFBGA672

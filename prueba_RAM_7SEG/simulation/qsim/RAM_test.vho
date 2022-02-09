@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
 
--- DATE "02/03/2022 18:54:34"
+-- DATE "02/09/2022 13:01:58"
 
 -- 
 -- Device: Altera 5CGXFC7C6U19C6 Package UFBGA484
@@ -39,8 +39,8 @@ ENTITY 	RAM_test IS
 	writen : IN std_logic;
 	address : IN std_logic_vector(7 DOWNTO 0);
 	data_in : IN std_logic_vector(7 DOWNTO 0);
-	hex0 : BUFFER std_logic_vector(0 TO 7);
-	hex1 : BUFFER std_logic_vector(0 TO 7)
+	hex0 : OUT std_logic_vector(0 TO 7);
+	hex1 : OUT std_logic_vector(0 TO 7)
 	);
 END RAM_test;
 
