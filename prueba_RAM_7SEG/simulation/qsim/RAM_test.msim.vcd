@@ -3,7 +3,7 @@ $comment
 		vcd file RAM_test.msim.vcd -direction
 $end
 $date
-	Wed Feb 09 13:02:00 2022
+	Thu Feb 10 14:09:10 2022
 $end
 $version
 	ModelSim Version 10.5b
